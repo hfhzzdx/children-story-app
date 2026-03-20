@@ -1,81 +1,60 @@
 # 小墩子故事屋 (Dunzi Story House)
 
-专为3-6岁儿童设计的讲故事Android应用。
+专为3-6岁儿童设计的讲故事应用
 
-## 项目概述
-
-这是一个面向3-6岁儿童的讲故事应用，提供丰富的故事内容、智能推荐、家长控制等功能。项目采用现代Android开发技术栈，包括Jetpack Compose、Room数据库、Hilt依赖注入等。
+## 项目状态
+- **状态**: 开发中 (85% 完成)
+- **最后更新**: 2026年3月20日
+- **版本**: 0.1.0-alpha
 
 ## 功能特性
 
-### 核心功能
-- 📚 **故事管理**：分类展示、搜索、收藏、播放历史
-- 🎵 **音频播放**：后台播放、播放控制、进度保存
-- 👶 **儿童友好**：大字体、鲜艳颜色、简单交互
-- 👨‍👩‍👧‍👦 **家长控制**：内容过滤、每日限制、播放时间管理
-- 📊 **学习统计**：播放记录、完成率、学习进度
+### ✅ 已完成的功能
+- **故事播放**: 支持音频故事播放，包含播放/暂停/停止/下一首/上一首控制
+- **播放进度**: 实时同步播放进度，支持跳转和快进/快退
+- **睡眠定时器**: 支持15/30/60分钟定时停止播放
+- **播放设置**: 音量控制、播放速度调整、随机播放、循环模式
+- **播放历史**: 记录播放记录，显示统计信息和最常播放的故事
+- **用户设置**: 儿童信息管理、播放设置、定时设置、家长控制
+- **界面设计**: 儿童友好的Material Design 3界面，支持深色/护眼模式
 
-### 技术特性
-- 🏗 **现代架构**：MVVM + Clean Architecture
-- 🎨 **现代UI**：Jetpack Compose + Material Design 3
-- 💾 **数据持久化**：Room数据库 + DataStore
-- 🔧 **依赖注入**：Hilt
-- 🎵 **音频播放**：ExoPlayer
-- 🌐 **网络支持**：Retrofit + OkHttp
-- 🖼 **图片加载**：Glide + Coil
+### 🔧 开发中的功能
+- 构建系统优化
+- 单元测试和集成测试
+- UI完善和性能优化
 
-## 项目结构
+## 技术架构
 
+### 技术栈
+- **语言**: Kotlin
+- **UI框架**: Jetpack Compose
+- **数据库**: Room
+- **音频播放**: ExoPlayer
+- **依赖注入**: Dagger Hilt
+- **架构模式**: MVVM
+
+### 项目结构
 ```
-children-story-app/
-├── app/
-│   ├── src/main/
-│   │   ├── java/com/dunzi/storyhouse/
-│   │   │   ├── data/              # 数据层
-│   │   │   │   ├── model/         # 数据模型
-│   │   │   │   ├── dao/          # 数据访问对象
-│   │   │   │   ├── database/     # 数据库
-│   │   │   │   ├── converter/    # 类型转换器
-│   │   │   │   └── repository/   # 仓库层
-│   │   │   ├── di/               # 依赖注入
-│   │   │   ├── service/          # 服务层
-│   │   │   ├── ui/               # UI层
-│   │   │   │   ├── component/    # 可复用组件
-│   │   │   │   ├── screen/       # 屏幕组件
-│   │   │   │   ├── story/        # 故事相关界面
-│   │   │   │   ├── player/       # 播放器界面
-│   │   │   │   ├── theme/        # 主题和样式
-│   │   │   │   └── viewmodel/    # 视图模型
-│   │   │   └── StoryApplication.kt
-│   │   └── res/                  # 资源文件
-│   │       ├── drawable/         # 图片资源
-│   │       ├── mipmap/           # 应用图标
-│   │       ├── values/           # 值资源
-│   │       └── xml/              # XML配置
-│   └── build.gradle              # 应用构建配置
-├── .github/workflows/            # GitHub Actions工作流
-├── build.gradle                  # 项目构建配置
-├── settings.gradle              # 项目设置
-├── gradle.properties            # Gradle属性
-└── gradlew                      # Gradle包装器
+app/src/main/java/com/dunzi/storyhouse/
+├── data/                    # 数据层
+│   ├── model/              # 数据模型
+│   ├── dao/                # 数据访问对象
+│   ├── repository/         # 仓库层
+│   ├── database/           # 数据库
+│   └── converter/          # 类型转换器
+├── ui/                     # 用户界面层
+│   ├── screen/            # 界面屏幕
+│   ├── component/         # UI组件
+│   ├── viewmodel/         # ViewModel
+│   ├── player/            # 播放器界面
+│   ├── setting/           # 设置界面
+│   ├── history/           # 播放历史界面
+│   └── story/             # 故事详情界面
+├── service/               # 服务层
+│   └── AudioPlaybackService.kt
+└── di/                    # 依赖注入
+    └── AppModule.kt
 ```
-
-## 技术栈
-
-### 主要依赖
-- **Android SDK**: 34
-- **Kotlin**: 1.9.24
-- **Jetpack Compose**: BOM 2024.02.02
-- **Room**: 2.6.1
-- **Hilt**: 2.50
-- **ExoPlayer**: 2.19.1
-- **Retrofit**: 2.9.0
-- **Glide**: 4.16.0
-
-### 开发工具
-- **Android Studio**: 最新版本
-- **Gradle**: 8.5
-- **JDK**: 17
 
 ## 快速开始
 
@@ -83,98 +62,109 @@ children-story-app/
 - Android Studio Flamingo 或更高版本
 - JDK 17
 - Android SDK 34
+- Gradle 8.5
 
-### 构建步骤
+### 构建说明
 1. 克隆项目
 2. 使用Android Studio打开项目
 3. 等待Gradle同步完成
-4. 连接Android设备或启动模拟器
-5. 点击运行按钮
-
-### GitHub Actions构建
-项目已配置GitHub Actions工作流，支持自动构建APK：
-- 推送代码到main分支时自动构建
-- 手动触发构建
-- 生成可下载的APK文件
+4. 连接设备或启动模拟器
+5. 运行应用
 
 ## 数据库设计
 
-### 主要表结构
-1. **story表**：故事基本信息
-   - id, title, author, category, duration, audioUrl, coverImage等
-2. **play_history表**：播放历史记录
-   - id, storyId, userId, duration, playedAt, completed等
-3. **user_settings表**：用户设置
-   - userId, childInfo, playbackSettings, parentalControl等
+### 实体关系
+```
+Story (1) ── (N) PlayHistory (N) ── (1) UserSettings
+```
 
-### 数据关系
-- 一个故事可以有多个播放记录
-- 一个用户有一套设置
-- 播放记录关联故事和用户
+### 主要实体
+1. **Story**: 故事信息，包含标题、作者、分类、时长、内容等
+2. **PlayHistory**: 播放历史记录，关联故事和播放详情
+3. **UserSettings**: 用户设置，包含儿童信息、播放偏好、家长控制等
 
-## UI设计原则
+## 音频播放特性
 
-### 儿童友好设计
-- **大字体**：易于阅读
-- **鲜艳颜色**：吸引注意力
-- **简单交互**：减少操作复杂度
-- **清晰反馈**：操作有明确反馈
-- **安全设计**：避免误操作
+### 核心功能
+- 前台服务播放，支持后台播放
+- 播放进度实时同步到数据库
+- 睡眠定时器自动停止播放
+- 通知控制栏集成
 
-### 家长控制
-- **内容过滤**：按年龄和分类过滤
-- **时间限制**：每日播放时间限制
-- **播放控制**：后台播放、自动播放等设置
-- **隐私保护**：数据收集控制
+### 播放控制
+- 播放速度: 0.5x - 2.0x 可调
+- 音量控制: 0.0 - 1.0 线性调整
+- 播放模式: 顺序播放、随机播放、循环播放
+- 快速跳转: 快进10秒、快退10秒
+
+## 用户界面
+
+### 主界面
+- 欢迎横幅和儿童信息
+- 播放统计卡片
+- 分类网格导航
+- 故事分区（最近播放、推荐故事、收藏故事）
+
+### 播放器界面
+- 故事封面和基本信息
+- 播放进度条和控制按钮
+- 额外控制面板（音量、速度、播放模式）
+- 睡眠定时器控制
+
+### 设置界面
+- 儿童信息管理
+- 播放设置（音量、速度、后台播放）
+- 定时设置（睡眠定时器、每日限制）
+- 显示设置（主题、字体、护眼模式）
+- 家长控制（内容过滤、购买锁定）
 
 ## 开发进度
 
-### 已完成
-- ✅ 项目架构搭建
-- ✅ 数据库设计和实现
-- ✅ 数据访问层和仓库层
-- ✅ 依赖注入配置
-- ✅ 音频播放服务
-- ✅ 播放器界面
-- ✅ 故事详情界面
-- ✅ 资源文件配置
-- ✅ GitHub Actions工作流
+### 里程碑
+- [x] 项目规划和架构设计
+- [x] 数据库层实现
+- [x] 音频播放服务
+- [x] 核心用户界面
+- [x] 设置和播放历史功能
+- [ ] 构建和测试
+- [ ] 功能完善和优化
+- [ ] 发布准备
 
-### 进行中
-- 🔄 主界面完善
-- 🔄 设置功能实现
-- 🔄 故事导入功能
-
-### 待完成
-- ⏳ 单元测试
-- ⏳ 错误处理优化
-- ⏳ 性能优化
-- ⏳ 多语言支持
+### 代码统计
+- Kotlin文件: 43个
+- XML文件: 22个
+- 总代码行数: ~11,600行
+- TODO标记: 31个（正在处理中）
 
 ## 贡献指南
 
+### 开发流程
 1. Fork项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开Pull Request
+2. 创建功能分支
+3. 提交代码变更
+4. 创建Pull Request
+5. 代码审查和合并
+
+### 代码规范
+- 遵循Kotlin官方编码规范
+- 使用Kotlin DSL进行Gradle配置
+- 使用Compose进行UI开发
+- 遵循MVVM架构模式
 
 ## 许可证
 
-本项目采用MIT许可证。详见 [LICENSE](LICENSE) 文件。
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
 ## 联系方式
 
-- 开发者：hfhzzdx
-- 项目主页：https://github.com/yourusername/children-story-app
-- 问题反馈：请使用GitHub Issues
+- **项目负责人**: 霍风浩
+- **邮箱**: [待添加]
+- **GitHub**: [待添加]
 
 ## 致谢
 
-感谢所有为项目做出贡献的开发者！
+感谢所有为项目做出贡献的开发者和测试人员。
 
 ---
-**小墩子故事屋** - 让每个孩子都有好故事听！ 📚🎵👶
 
-
-~本项目由deepseek和openclaw生成~
+**注意**: 本项目仍在积极开发中，API和功能可能会有变动。
