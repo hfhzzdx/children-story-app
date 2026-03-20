@@ -64,12 +64,30 @@ app/src/main/java/com/dunzi/storyhouse/
 - Android SDK 34
 - Gradle 8.5
 
-### 构建说明
+### 本地构建说明
 1. 克隆项目
 2. 使用Android Studio打开项目
 3. 等待Gradle同步完成
 4. 连接设备或启动模拟器
 5. 运行应用
+
+### GitHub Actions 构建
+项目已配置GitHub Actions工作流，支持自动构建和测试：
+
+![Android CI](https://github.com/你的用户名/children-story-app/actions/workflows/android-build.yml/badge.svg)
+
+**构建步骤**:
+1. 推送到 `main` 或 `master` 分支
+2. GitHub Actions自动触发构建
+3. 生成Debug APK作为构建产物
+4. 执行单元测试并生成测试报告
+
+**查看构建结果**:
+- 访问仓库的"Actions"标签页
+- 查看最新构建的运行状态
+- 下载生成的APK文件
+
+详细构建指南请参考 [GITHUB_ACTIONS_BUILD.md](GITHUB_ACTIONS_BUILD.md)
 
 ## 数据库设计
 

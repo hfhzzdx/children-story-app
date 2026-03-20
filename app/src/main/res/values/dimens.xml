@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 间距 -->
+    <dimen name="spacing_tiny">2dp</dimen>
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+    <dimen name="spacing_xxlarge">32dp</dimen>
+    <dimen name="spacing_xxxlarge">48dp</dimen>
+    
+    <!-- 内边距 -->
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+    <dimen name="padding_xxlarge">32dp</dimen>
+    
+    <!-- 外边距 -->
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    
+    <!-- 圆角半径 -->
+    <dimen name="corner_radius_small">4dp</dimen>
+    <dimen name="corner_radius_medium">8dp</dimen>
+    <dimen name="corner_radius_large">16dp</dimen>
+    <dimen name="corner_radius_xlarge">24dp</dimen>
+    <dimen name="corner_radius_circle">50%</dimen>
+    
+    <!-- 高度 -->
+    <dimen name="height_tiny">24dp</dimen>
+    <dimen name="height_small">32dp</dimen>
+    <dimen name="height_medium">48dp</dimen>
+    <dimen name="height_large">56dp</dimen>
+    <dimen name="height_xlarge">64dp</dimen>
+    <dimen name="height_xxlarge">72dp</dimen>
+    <dimen name="height_xxxlarge">96dp</dimen>
+    
+    <!-- 宽度 -->
+    <dimen name="width_tiny">24dp</dimen>
+    <dimen name="width_small">48dp</dimen>
+    <dimen name="width_medium">96dp</dimen>
+    <dimen name="width_large">144dp</dimen>
+    <dimen name="width_xlarge">192dp</dimen>
+    <dimen name="width_xxlarge">256dp</dimen>
+    
+    <!-- 图标尺寸 -->
+    <dimen name="icon_size_tiny">16dp</dimen>
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_medium">32dp</dimen>
+    <dimen name="icon_size_large">48dp</dimen>
+    <dimen name="icon_size_xlarge">64dp</dimen>
+    <dimen name="icon_size_xxlarge">96dp</dimen>
+    
+    <!-- 文字尺寸 -->
+    <dimen name="text_size_tiny">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_large">16sp</dimen>
+    <dimen name="text_size_xlarge">18sp</dimen>
+    <dimen name="text_size_xxlarge">20sp</dimen>
+    <dimen name="text_size_xxxlarge">24sp</dimen>
+    <dimen name="text_size_huge">32sp</dimen>
+    
+    <!-- 按钮尺寸 -->
+    <dimen name="button_height_small">36dp</dimen>
+    <dimen name="button_height_medium">48dp</dimen>
+    <dimen name="button_height_large">56dp</dimen>
+    <dimen name="button_min_width_small">64dp</dimen>
+    <dimen name="button_min_width_medium">96dp</dimen>
+    <dimen name="button_min_width_large">128dp</dimen>
+    
+    <!-- 输入框尺寸 -->
+    <dimen name="input_height_small">40dp</dimen>
+    <dimen name="input_height_medium">48dp</dimen>
+    <dimen name="input_height_large">56dp</dimen>
+    
+    <!-- 卡片尺寸 -->
+    <dimen name="card_elevation_small">2dp</dimen>
+    <dimen name="card_elevation_medium">4dp</dimen>
+    <dimen name="card_elevation_large">8dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    
+    <!-- 工具栏尺寸 -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    
+    <!-- 底部导航栏尺寸 -->
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="bottom_navigation_elevation">8dp</dimen>
+    <dimen name="bottom_navigation_icon_size">24dp</dimen>
+    
+    <!-- 播放器控件尺寸 -->
+    <dimen name="player_control_button_size">64dp</dimen>
+    <dimen name="player_play_button_size">96dp</dimen>
+    <dimen name="player_seekbar_height">48dp</dimen>
+    <dimen name="player_thumb_size">24dp</dimen>
+    <dimen name="player_time_text_size">14sp</dimen>
+    
+    <!-- 列表项尺寸 -->
+    <dimen name="list_item_height_small">56dp</dimen>
+    <dimen name="list_item_height_medium">72dp</dimen>
+    <dimen name="list_item_height_large">96dp</dimen>
+    <dimen name="list_item_padding_horizontal">16dp</dimen>
+    <dimen name="list_item_padding_vertical">12dp</dimen>
+    <dimen name="list_item_icon_size">40dp</dimen>
+    
+    <!-- 故事卡片尺寸 -->
+    <dimen name="story_card_width">160dp</dimen>
+    <dimen name="story_card_height">200dp</dimen>
+    <dimen name="story_card_image_height">120dp</dimen>
+    <dimen name="story_card_padding">12dp</dimen>
+    <dimen name="story_card_corner_radius">12dp</dimen>
+    
+    <!-- 分类图标尺寸 -->
+    <dimen name="category_icon_size">48dp</dimen>
+    <dimen name="category_item_width">80dp</dimen>
+    <dimen name="category_item_height">100dp</dimen>
+    
+    <!-- 标签尺寸 -->
+    <dimen name="tag_height">24dp</dimen>
+    <dimen name="tag_padding_horizontal">8dp</dimen>
+    <dimen name="tag_padding_vertical">4dp</dimen>
+    <dimen name="tag_corner_radius">12dp</dimen>
+    <dimen name="tag_text_size">12sp</dimen>
+    
+    <!-- 进度指示器尺寸 -->
+    <dimen name="progress_indicator_size_small">24dp</dimen>
+    <dimen name="progress_indicator_size_medium">32dp</dimen>
+    <dimen name="progress_indicator_size_large">48dp</dimen>
+    
+    <!-- 分隔线尺寸 -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_padding_horizontal">16dp</dimen>
+    
+    <!-- 对话框尺寸 -->
+    <dimen name="dialog_width">280dp</dimen>
+    <dimen name="dialog_padding">24dp</dimen>
+    <dimen name="dialog_corner_radius">16dp</dimen>
+    
+    <!-- 浮动按钮尺寸 -->
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    
+    <!-- 网格间距 -->
+    <dimen name="grid_spacing_small">4dp</dimen>
+    <dimen name="grid_spacing_medium">8dp</dimen>
+    <dimen name="grid_spacing_large">16dp</dimen>
+    
+    <!-- 导入界面尺寸 -->
+    <dimen name="import_item_height">64dp</dimen>
+    <dimen name="import_progress_size">32dp</dimen>
+    <dimen name="import_status_size">20dp</dimen>
+    
+    <!-- 设置项尺寸 -->
+    <dimen name="setting_item_height">56dp</dimen>
+    <dimen name="setting_icon_size">24dp</dimen>
+    <dimen name="setting_switch_width">48dp</dimen>
+    
+    <!-- 头像尺寸 -->
+    <dimen name="avatar_size_small">32dp</dimen>
+    <dimen name="avatar_size_medium">48dp</dimen>
+    <dimen name="avatar_size_large">64dp</dimen>
+    <dimen name="avatar_size_xlarge">96dp</dimen>
+    
+    <!-- 阴影尺寸 -->
+    <dimen name="shadow_elevation_small">2dp</dimen>
+    <dimen name="shadow_elevation_medium">4dp</dimen>
+    <dimen name="shadow_elevation_large">8dp</dimen>
+    <dimen name="shadow_radius_small">4dp</dimen>
+    <dimen name="shadow_radius_medium">8dp</dimen>
+    <dimen name="shadow_radius_large">16dp</dimen>
+    
+    <!-- 动画时长 -->
+    <integer name="anim_duration_short">200</integer>
+    <integer name="anim_duration_medium">300</integer>
+    <integer name="anim_duration_long">500</integer>
+    <integer name="anim_duration_very_long">1000</integer>
+    
+    <!-- 其他尺寸 -->
+    <dimen name="min_touch_target_size">48dp</dimen>
+    <dimen name="max_content_width">600dp</dimen>
+    <dimen name="screen_edge_margin">8dp</dimen>
+    
+</resources>

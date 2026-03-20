@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- External storage paths -->
+    <external-path
+        name="external_storage_root"
+        path="." />
+    <external-path
+        name="external_files"
+        path="Android/data/com.dunzi.storyhouse/files" />
+    <external-path
+        name="external_cache"
+        path="Android/data/com.dunzi.storyhouse/cache" />
+    
+    <!-- Internal storage paths -->
+    <files-path
+        name="internal_files"
+        path="." />
+    <cache-path
+        name="internal_cache"
+        path="." />
+    
+    <!-- External media paths -->
+    <external-files-path
+        name="external_media"
+        path="." />
+    
+    <!-- External cache path -->
+    <external-cache-path
+        name="external_app_cache"
+        path="." />
+    
+    <!-- Story files directory -->
+    <files-path
+        name="stories"
+        path="stories/" />
+    
+    <!-- Downloads directory -->
+    <external-path
+        name="downloads"
+        path="Download/StoryHouse" />
+    
+    <!-- Temporary files -->
+    <cache-path
+        name="temp"
+        path="temp/" />
+    
+    <!-- Database files -->
+    <files-path
+        name="databases"
+        path="databases/" />
+    
+    <!-- Shared preferences -->
+    <files-path
+        name="shared_prefs"
+        path="shared_prefs/" />
+</paths>

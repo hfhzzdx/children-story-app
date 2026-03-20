@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用名称 -->
+    <string name="app_name">小墩子故事屋</string>
+    <string name="app_description">专为3-6岁儿童设计的讲故事应用</string>
+    
+    <!-- 通用 -->
+    <string name="loading">加载中…</string>
+    <string name="error">错误</string>
+    <string name="retry">重试</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="edit">编辑</string>
+    <string name="add">添加</string>
+    <string name="search">搜索</string>
+    <string name="search_hint">搜索故事…</string>
+    <string name="no_results">没有找到结果</string>
+    <string name="back">返回</string>
+    <string name="next">下一步</string>
+    <string name="finish">完成</string>
+    <string name="skip">跳过</string>
+    <string name="continue">继续</string>
+    
+    <!-- 按钮 -->
+    <string name="btn_play">播放</string>
+    <string name="btn_pause">暂停</string>
+    <string name="btn_stop">停止</string>
+    <string name="btn_next">下一首</string>
+    <string name="btn_previous">上一首</string>
+    <string name="btn_favorite">收藏</string>
+    <string name="btn_share">分享</string>
+    <string name="btn_download">下载</string>
+    <string name="btn_import">导入</string>
+    <string name="btn_settings">设置</string>
+    <string name="btn_about">关于</string>
+    <string name="btn_help">帮助</string>
+    <string name="btn_exit">退出</string>
+    
+    <!-- 故事相关 -->
+    <string name="story_cover">故事封面</string>
+    <string name="story_title">故事标题</string>
+    <string name="story_author">作者</string>
+    <string name="story_category">分类</string>
+    <string name="story_duration">时长</string>
+    <string name="story_age_range">适合年龄</string>
+    <string name="story_description">故事描述</string>
+    <string name="story_content">故事内容</string>
+    <string name="story_tags">标签</string>
+    <string name="story_progress">播放进度</string>
+    <string name="story_completed">已听完</string>
+    <string name="story_favorite">已收藏</string>
+    <string name="story_recently_played">最近播放</string>
+    <string name="story_recommended">推荐故事</string>
+    <string name="story_popular">热门故事</string>
+    <string name="story_new">新故事</string>
+    
+    <!-- 分类 -->
+    <string name="category_all">全部</string>
+    <string name="category_conversation">通话故事</string>
+    <string name="category_picture">绘本故事</string>
+    <string name="category_bedtime">睡前故事</string>
+    <string name="category_idiom">成语故事</string>
+    <string name="category_fable">寓言故事</string>
+    <string name="category_science">科普故事</string>
+    <string name="category_other">其他</string>
+    
+    <!-- 播放器 -->
+    <string name="player_now_playing">正在播放</string>
+    <string name="player_playback_speed">播放速度</string>
+    <string name="player_sleep_timer">睡眠定时器</string>
+    <string name="player_repeat_mode">循环模式</string>
+    <string name="player_shuffle">随机播放</string>
+    <string name="player_volume">音量</string>
+    <string name="player_playlist">播放列表</string>
+    <string name="player_lyrics">歌词</string>
+    <string name="player_equalizer">均衡器</string>
+    <string name="player_audio_effects">音效</string>
+    
+    <!-- 播放状态 -->
+    <string name="playback_playing">播放中</string>
+    <string name="playback_paused">已暂停</string>
+    <string name="playback_stopped">已停止</string>
+    <string name="playback_completed">播放完成</string>
+    <string name="playback_error">播放错误</string>
+    <string name="playback_buffering">缓冲中…</string>
+    
+    <!-- 时间格式 -->
+    <string name="time_minutes">%1$d分钟</string>
+    <string name="time_hours_minutes">%1$d小时%2$d分钟</string>
+    <string name="time_seconds">%1$d秒</string>
+    <string name="time_days">%1$d天</string>
+    
+    <!-- 统计 -->
+    <string name="stats_total_play_time">总播放时间</string>
+    <string name="stats_stories_completed">听完的故事</string>
+    <string name="stats_favorites_count">收藏数量</string>
+    <string name="stats_daily_average">日均播放</string>
+    <string name="stats_most_played">最常播放</string>
+    <string name="stats_recent_activity">最近活动</string>
+    
+    <!-- 设置 -->
+    <string name="settings_title">设置</string>
+    <string name="settings_child_info">儿童信息</string>
+    <string name="settings_playback">播放设置</string>
+    <string name="settings_display">显示设置</string>
+    <string name="settings_notifications">通知设置</string>
+    <string name="settings_storage">存储设置</string>
+    <string name="settings_network">网络设置</string>
+    <string name="settings_parental_control">家长控制</string>
+    <string name="settings_about">关于应用</string>
+    <string name="settings_help">帮助与反馈</string>
+    <string name="settings_privacy">隐私政策</string>
+    <string name="settings_terms">服务条款</string>
+    
+    <!-- 儿童信息 -->
+    <string name="child_name">儿童姓名</string>
+    <string name="child_age">年龄</string>
+    <string name="child_gender">性别</string>
+    <string name="child_avatar">头像</string>
+    <string name="child_boy">男孩</string>
+    <string name="child_girl">女孩</string>
+    
+    <!-- 播放设置 -->
+    <string name="playback_default_volume">默认音量</string>
+    <string name="playback_default_speed">默认播放速度</string>
+    <string name="playback_voice_type">语音类型</string>
+    <string name="playback_background_play">后台播放</string>
+    <string name="playback_auto_play_next">自动播放下一首</string>
+    
+    <!-- 定时设置 -->
+    <string name="timer_sleep_timer">睡眠定时器</string>
+    <string name="timer_daily_limit">每日限制</string>
+    <string name="timer_duration">时长</string>
+    <string name="timer_enabled">启用</string>
+    <string name="timer_disabled">禁用</string>
+    
+    <!-- 显示设置 -->
+    <string name="display_theme">主题</string>
+    <string name="display_font_size">字体大小</string>
+    <string name="display_eye_protection">护眼模式</string>
+    <string name="display_animations">动画效果</string>
+    <string name="theme_light">浅色</string>
+    <string name="theme_dark">深色</string>
+    <string name="theme_auto">跟随系统</string>
+    <string name="font_size_small">小</string>
+    <string name="font_size_normal">正常</string>
+    <string name="font_size_large">大</string>
+    <string name="font_size_extra_large">特大</string>
+    
+    <!-- 内容过滤 -->
+    <string name="content_filter_level">内容过滤级别</string>
+    <string name="content_age_restriction">年龄限制</string>
+    <string name="content_blocked_categories">屏蔽分类</string>
+    <string name="content_blocked_tags">屏蔽标签</string>
+    <string name="filter_level_none">无过滤</string>
+    <string name="filter_level_mild">轻度过滤</string>
+    <string name="filter_level_moderate">中度过滤</string>
+    <string name="filter_level_strict">严格过滤</string>
+    
+    <!-- 家长控制 -->
+    <string name="parental_control_enabled">启用家长控制</string>
+    <string name="parental_purchase_lock">购买锁定</string>
+    <string name="parental_data_collection">数据收集</string>
+    <string name="parental_analytics">分析数据</string>
+    
+    <!-- 通知 -->
+    <string name="notifications_enabled">启用通知</string>
+    <string name="notifications_reminders">提醒通知</string>
+    <string name="notifications_updates">更新通知</string>
+    <string name="notifications_promotional">推广通知</string>
+    
+    <!-- 存储 -->
+    <string name="storage_auto_download">自动下载收藏</string>
+    <string name="storage_location">存储位置</string>
+    <string name="storage_cache_limit">缓存大小限制</string>
+    <string name="storage_auto_clear">自动清理缓存</string>
+    <string name="storage_internal">内部存储</string>
+    <string name="storage_external">外部存储</string>
+    
+    <!-- 网络 -->
+    <string name="network_wifi_only">仅Wi-Fi下载</string>
+    <string name="network_data_saver">省流量模式</string>
+    <string name="network_sync">同步数据</string>
+    
+    <!-- 音频设置 -->
+    <string name="audio_background_music">背景音乐</string>
+    <string name="audio_background_music_type">背景音乐类型</string>
+    <string name="audio_background_music_volume">背景音乐音量</string>
+    <string name="audio_sound_effects">音效</string>
+    <string name="music_type_nature">自然声音</string>
+    <string name="music_type_classical">古典音乐</string>
+    <string name="music_type_lullaby">摇篮曲</string>
+    <string name="music_type_none">无</string>
+    
+    <!-- 播放模式 -->
+    <string name="play_mode_normal">正常播放</string>
+    <string name="play_mode_repeat_one">单曲循环</string>
+    <string name="play_mode_repeat_all">列表循环</string>
+    <string name="play_mode_shuffle">随机播放</string>
+    <string name="play_mode_crossfade">淡入淡出</string>
+    
+    <!-- 学习设置 -->
+    <string name="learning_mode_enabled">学习模式</string>
+    <string name="learning_repeat_difficult">重复难点</string>
+    <string name="learning_show_subtitles">显示字幕</string>
+    <string name="learning_vocabulary_highlight">词汇高亮</string>
+    
+    <!-- 导入 -->
+    <string name="import_stories">导入故事</string>
+    <string name="import_from_local">从本地导入</string>
+    <string name="import_from_cloud">从云端导入</string>
+    <string name="import_select_files">选择文件</string>
+    <string name="import_supported_formats">支持格式：MP3, WAV, PDF, TXT</string>
+    <string name="import_processing">正在处理…</string>
+    <string name="import_success">导入成功</string>
+    <string name="import_failed">导入失败</string>
+    <string name="import_no_files">未选择文件</string>
+    
+    <!-- 空状态 -->
+    <string name="empty_no_stories">还没有故事</string>
+    <string name="empty_no_favorites">还没有收藏</string>
+    <string name="empty_no_recent">最近没有播放</string>
+    <string name="empty_no_search_results">没有搜索结果</string>
+    <string name="tip_add_first_story">点击下方按钮添加第一个故事</string>
+    <string name="tip_import_stories">导入故事开始使用</string>
+    
+    <!-- 错误消息 -->
+    <string name="error_network">网络连接失败</string>
+    <string name="error_storage">存储空间不足</string>
+    <string name="error_permission">权限被拒绝</string>
+    <string name="error_file_format">不支持的文件格式</string>
+    <string name="error_database">数据库错误</string>
+    <string name="error_unknown">未知错误</string>
+    
+    <!-- 成功消息 -->
+    <string name="success_saved">保存成功</string>
+    <string name="success_deleted">删除成功</string>
+    <string name="success_imported">导入成功</string>
+    <string name="success_updated">更新成功</string>
+    
+    <!-- 确认对话框 -->
+    <string name="confirm_delete_story">确定要删除这个故事吗？</string>
+    <string name="confirm_clear_history">确定要清空播放历史吗？</string>
+    <string name="confirm_reset_settings">确定要重置所有设置吗？</string>
+    <string name="confirm_exit_app">确定要退出应用吗？</string>
+    
+    <!-- 通知渠道 -->
+    <string name="notification_channel_name">故事播放</string>
+    <string name="notification_channel_description">故事播放和控制通知</string>
+    <string name="notification_playing">正在播放：%1$s</string>
+    <string name="notification_paused">已暂停：%1$s</string>
+    <string name="notification_completed">播放完成：%1$s</string>
+    
+    <!-- 关于 -->
+    <string name="about_version">版本：%1$s</string>
+    <string name="about_developer">开发者：霍风浩</string>
+    <string name="about_email">邮箱：fenghao@example.com</string>
+    <string name="about_website">网站：https://storyhouse.example.com</string>
+    <string name="about_privacy_policy">隐私政策</string>
+    <string name="about_terms_of_service">服务条款</string>
+    <string name="about_open_source">开源许可</string>
+    <string name="about_rate_app">评价应用</string>
+    <string name="about_share_app">分享应用</string>
+    
+    <!-- 权限请求 -->
+    <string name="permission_storage_title">存储权限</string>
+    <string name="permission_storage_message">需要存储权限来导入故事和保存文件</string>
+    <string name="permission_audio_title">录音权限</string>
+    <string name="permission_audio_message">需要录音权限来录制语音故事</string>
+    <string name="permission_notification_title">通知权限</string>
+    <string name="permission_notification_message">需要通知权限来显示播放控制和提醒</string>
+    
+    <!-- 引导页 -->
+    <string name="welcome_title">欢迎来到小墩子故事屋</string>
+    <string name="welcome_subtitle">专为3-6岁儿童设计的讲故事应用</string>
+    <string name="welcome_step1_title">海量故事</string>
+    <string name="welcome_step1_desc">精选适合儿童的故事内容</string>
+    <string name="welcome_step2_title">智能推荐</string>
+    <string name="welcome_step2_desc">根据年龄和兴趣推荐故事</string>
+    <string name="welcome_step3_title">家长控制</string>
+    <string name="welcome_step3_desc">保护儿童安全使用</string>
+    <string name="welcome_get_started">开始使用</string>
+    
+    <!-- 单位 -->
+    <string name="unit_minute">分钟</string>
+    <string name="unit_hour">小时</string>
+    <string name="unit_day">天</string>
+    <string name="unit_story">个故事</string>
+    <string name="unit_times">次</string>
+    
+    <!-- 其他 -->
+    <string name="unknown">未知</string>
+    <string name="not_set">未设置</string>
+    <string name="default">默认</string>
+    <string name="custom">自定义</string>
+    <string name="enabled">已启用</string>
+    <string name="disabled">已禁用</string>
+    <string name="on">开</string>
+    <string name="off">关</string>
+    
+    <!-- 故事详情 -->
+    <string name="story_not_found">故事不存在</string>
+    <string name="tip_go_back">请返回主界面选择其他故事</string>
+    <string name="stats_title">统计信息</string>
+    <string name="stats_play_count">播放次数</string>
+    <string name="go_back">返回</string>
+    
+    <!-- 设置界面 -->
+    <string name="child_info_title">儿童信息</string>
+    <string name="unknown_child">未知儿童</string>
+    <string name="edit_child_info">编辑儿童信息</string>
+    <string name="child_avatar">儿童头像</string>
+    <string name="playback_settings_title">播放设置</string>
+    <string name="volume_setting">音量设置</string>
+    <string name="playback_speed">播放速度</string>
+    <string name="background_play">后台播放</string>
+    <string name="background_play_desc">允许应用在后台继续播放</string>
+    <string name="auto_play_next">自动播放下一首</string>
+    <string name="auto_play_next_desc">当前故事播放完后自动播放下一首</string>
+    <string name="timer_settings_title">定时设置</string>
+    <string name="sleep_timer">睡眠定时器</string>
+    <string name="sleep_timer_desc">设置定时停止播放</string>
+    <string name="sleep_timer_duration">睡眠定时器时长</string>
+    <string name="daily_limit">每日限制</string>
+    <string name="daily_limit_desc">限制每日播放时间</string>
+    <string name="daily_limit_duration">每日限制时长</string>
+    <string name="display_settings_title">显示设置</string>
+    <string name="theme_setting">主题设置</string>
+    <string name="font_size">字体大小</string>
+    <string name="eye_protection_mode">护眼模式</string>
+    <string name="eye_protection_mode_desc">减少蓝光，保护视力</string>
+    <string name="animation_enabled">动画效果</string>
+    <string name="animation_enabled_desc">启用界面动画效果</string>
+    <string name="content_filter_title">内容过滤</string>
+    <string name="filter_level">过滤级别</string>
+    <string name="filter_level_strict">严格</string>
+    <string name="filter_level_moderate">中等</string>
+    <string name="filter_level_lenient">宽松</string>
+    <string name="age_restriction">年龄限制</string>
+    <string name="age_restriction_desc">根据年龄过滤内容</string>
+    <string name="blocked_categories">屏蔽分类</string>
+    <string name="blocked_categories_desc">管理屏蔽的分类</string>
+    <string name="blocked_tags">屏蔽标签</string>
+    <string name="blocked_tags_desc">管理屏蔽的标签</string>
+    <string name="parental_control_title">家长控制</string>
+    <string name="parental_control_enabled">家长控制</string>
+    <string name="parental_control_enabled_desc">启用家长控制功能</string>
+    <string name="purchase_lock">购买锁定</string>
+    <string name="purchase_lock_desc">防止意外购买</string>
+    <string name="data_collection">数据收集</string>
+    <string name="data_collection_desc">允许收集使用数据</string>
+    <string name="analytics_enabled">分析数据</string>
+    <string name="analytics_enabled_desc">启用数据分析功能</string>
+    <string name="notification_settings_title">通知设置</string>
+    <string name="notifications_enabled_desc">接收应用通知</string>
+    <string name="reminder_notifications">提醒通知</string>
+    <string name="reminder_notifications_desc">接收播放提醒通知</string>
+    <string name="update_notifications">更新通知</string>
+    <string name="update_notifications_desc">接收应用更新通知</string>
+    <string name="promotional_notifications">推广通知</string>
+    <string name="promotional_notifications_desc">接收推广活动通知</string>
+    <string name="storage_settings_title">存储设置</string>
+    <string name="auto_download_favorites">自动下载收藏</string>
+    <string name="auto_download_favorites_desc">自动下载收藏的故事</string>
+    <string name="auto_clear_cache">自动清理缓存</string>
+    <string name="auto_clear_cache_desc">定期清理应用缓存</string>
+    <string name="wifi_only_download">仅WiFi下载</string>
+    <string name="wifi_only_download_desc">仅在WiFi网络下下载</string>
+    <string name="data_saver_mode">省流量模式</string>
+    <string name="data_saver_mode_desc">减少数据使用量</string>
+    <string name="cache_size_limit">缓存大小限制</string>
+    <string name="storage_location">存储位置</string>
+    <string name="app_info_title">应用信息</string>
+    <string name="app_version">应用版本</string>
+    <string name="privacy_policy">隐私政策</string>
+    <string name="privacy_policy_desc">查看隐私政策</string>
+    <string name="terms_of_service">用户协议</string>
+    <string name="terms_of_service_desc">查看用户协议</string>
+    <string name="share_app">分享应用</string>
+    <string name="share_app_desc">分享给朋友</string>
+    <string name="clear_data">清除数据</string>
+    <string name="clear_data_desc">清除所有应用数据</string>
+    <string name="reset_settings">重置设置</string>
+    <string name="settings_not_found">设置不存在</string>
+    <string name="tip_reset_settings">请重置设置或返回主界面</string>
+</resources>

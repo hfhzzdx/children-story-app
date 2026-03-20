@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主题颜色 -->
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryVariant">#388E3C</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    
+    <color name="colorSecondary">#FF9800</color>
+    <color name="colorSecondaryVariant">#F57C00</color>
+    <color name="colorOnSecondary">#000000</color>
+    
+    <color name="colorTertiary">#2196F3</color>
+    <color name="colorTertiaryVariant">#1976D2</color>
+    <color name="colorOnTertiary">#FFFFFF</color>
+    
+    <!-- 背景和表面 -->
+    <color name="colorBackground">#FCFDF7</color>
+    <color name="colorOnBackground">#1A1C19</color>
+    
+    <color name="colorSurface">#FCFDF7</color>
+    <color name="colorOnSurface">#1A1C19</color>
+    <color name="colorSurfaceVariant">#DEE5D9</color>
+    <color name="colorOnSurfaceVariant">#424940</color>
+    
+    <!-- 错误颜色 -->
+    <color name="colorError">#BA1A1A</color>
+    <color name="colorErrorVariant">#93000A</color>
+    <color name="colorOnError">#FFFFFF</color>
+    
+    <!-- 轮廓 -->
+    <color name="colorOutline">#72796F</color>
+    <color name="colorOutlineVariant">#C2C9BD</color>
+    
+    <!-- 深色主题颜色 -->
+    <color name="colorPrimaryDark">#ACD5AD</color>
+    <color name="colorPrimaryVariantDark">#205224</color>
+    <color name="colorOnPrimaryDark">#00390F</color>
+    
+    <color name="colorSecondaryDark">#B9CCB5</color>
+    <color name="colorSecondaryVariantDark">#3B4B38</color>
+    <color name="colorOnSecondaryDark">#253423</color>
+    
+    <color name="colorBackgroundDark">#1A1C19</color>
+    <color name="colorOnBackgroundDark">#E4E6E1</color>
+    
+    <!-- 自定义颜色 -->
+    <color name="story_card_background">#FFFFFF</color>
+    <color name="story_card_shadow">#1A000000</color>
+    
+    <color name="category_card_background">#F5F5F5</color>
+    
+    <color name="player_control_background">#FFFFFF</color>
+    <color name="player_progress">#4CAF50</color>
+    <color name="player_progress_background">#E0E0E0</color>
+    
+    <color name="favorite_color">#FF4081</color>
+    <color name="play_button_color">#4CAF50</color>
+    <color name="pause_button_color">#FF9800</color>
+    <color name="stop_button_color">#F44336</color>
+    
+    <!-- 分类颜色 -->
+    <color name="category_conversation">#2196F3</color>
+    <color name="category_picture">#9C27B0</color>
+    <color name="category_bedtime">#673AB7</color>
+    <color name="category_idiom">#FF5722</color>
+    <color name="category_fable">#009688</color>
+    <color name="category_science">#00BCD4</color>
+    
+    <!-- 标签颜色 -->
+    <color name="tag_background">#E8F5E9</color>
+    <color name="tag_text">#2E7D32</color>
+    <color name="age_tag_background">#FFF3E0</color>
+    <color name="age_tag_text">#EF6C00</color>
+    
+    <!-- 导入状态颜色 -->
+    <color name="import_success">#4CAF50</color>
+    <color name="import_processing">#FF9800</color>
+    <color name="import_failed">#F44336</color>
+    
+    <!-- 透明颜色 -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+    
+    <!-- 护眼模式颜色 -->
+    <color name="eye_protection_background">#F5F5DC</color>
+    <color name="eye_protection_text">#5D4037</color>
+    <color name="eye_protection_card">#FFFFFF</color>
+    
+    <!-- 其他 -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="gray_light">#FFE0E0E0</color>
+    <color name="gray">#FF9E9E9E</color>
+    <color name="gray_dark">#FF616161</color>
+    
+    <color name="success_green">#4CAF50</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="error_red">#F44336</color>
+    <color name="info_blue">#2196F3</color>
+</resources>

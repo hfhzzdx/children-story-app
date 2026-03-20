@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   For more details, see https://developer.android.com/guide/topics/data/autobackup
+-->
+<full-backup-content>
+    <!--
+       Exclude from backup shared preferences that contain GCM registration id
+    -->
+    <exclude domain="sharedpref" path="gcm.xml"/>
+    
+    <!--
+       Exclude Room database files
+    -->
+    <exclude domain="database" path="story_database.db"/>
+    <exclude domain="database" path="story_database.db-shm"/>
+    <exclude domain="database" path="story_database.db-wal"/>
+    
+    <!--
+       Exclude cache files
+    -->
+    <exclude domain="cache" path="."/>
+    
+    <!--
+       Exclude downloaded story files
+    -->
+    <exclude domain="file" path="stories"/>
+    <exclude domain="file" path="downloads"/>
+    <exclude domain="file" path="cache"/>
+    
+    <!--
+       Include app settings
+    -->
+    <include domain="sharedpref" path="story_app_prefs.xml"/>
+    
+    <!--
+       Include user preferences
+    -->
+    <include domain="sharedpref" path="user_settings.xml"/>
+</full-backup-content>

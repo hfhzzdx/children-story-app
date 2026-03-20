@@ -1,0 +1,3 @@
+// 最简化的settings.gradle
+rootProject.name = "MinimalBuildTest"
+include ':app'

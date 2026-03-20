@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dunzi.storyhouse">
+
+    <!-- 权限声明 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- 存储权限（用于导入故事） -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" 
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" 
+        android:maxSdkVersion="32" />
+    
+    <!-- Android 13+ 媒体权限 -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    
+    <!-- 音频权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <!-- 后台服务权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    
+    <!-- 特性声明 -->
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    
+    <application
+        android:name=".StoryApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChildrenStoryApp"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        
+        <!-- 主活动 -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <!-- 深链接支持 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="storyhouse" />
+                <data android:host="open" />
+            </intent-filter>
+        </activity>
+        
+        <!-- 播放器活动 -->
+        <activity
+            android:name=".ui.player.PlayerActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Theme.ChildrenStoryApp.Player" />
+        
+        <!-- 故事详情活动 -->
+        <activity
+            android:name=".ui.story.StoryDetailActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- 导入活动 -->
+        <activity
+            android:name=".ui.import.ImportActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- 设置活动 -->
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- 设置活动（兼容旧名称） -->
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- 播放历史活动 -->
+        <activity
+            android:name=".ui.history.PlayHistoryActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+        
+        <!-- 儿童信息设置活动 -->
+        <activity
+            android:name=".ui.settings.ChildInfoActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.settings.SettingsActivity" />
+        
+        <!-- 播放设置活动 -->
+        <activity
+            android:name=".ui.settings.PlaybackSettingsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.settings.SettingsActivity" />
+        
+        <!-- 关于活动 -->
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.settings.SettingsActivity" />
+        
+        <!-- 服务 -->
+        <service
+            android:name=".service.AudioPlaybackService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+        
+        <service
+            android:name=".service.StoryImportService"
+            android:exported="false" />
+        
+        <!-- 接收器 -->
+        <receiver
+            android:name=".receiver.PlaybackReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.dunzi.storyhouse.action.PLAY" />
+                <action android:name="com.dunzi.storyhouse.action.PAUSE" />
+                <action android:name="com.dunzi.storyhouse.action.STOP" />
+                <action android:name="com.dunzi.storyhouse.action.NEXT" />
+                <action android:name="com.dunzi.storyhouse.action.PREVIOUS" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- 提供者 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        
+        <!-- 元数据 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+        
+        <!-- 兼容性 -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+            
+    </application>
+
+</manifest>

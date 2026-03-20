@@ -1,0 +1,133 @@
+package com.dunzi.storyhouse.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+// 浅色主题颜色
+val md_theme_light_primary = Color(0xFF4CAF50)
+val md_theme_light_onPrimary = Color(0xFFFFFFFF)
+val md_theme_light_primaryContainer = Color(0xFFC8E6C9)
+val md_theme_light_onPrimaryContainer = Color(0xFF002107)
+val md_theme_light_secondary = Color(0xFF52634F)
+val md_theme_light_onSecondary = Color(0xFFFFFFFF)
+val md_theme_light_secondaryContainer = Color(0xFFD5E8D0)
+val md_theme_light_onSecondaryContainer = Color(0xFF111F0E)
+val md_theme_light_tertiary = Color(0xFF386568)
+val md_theme_light_onTertiary = Color(0xFFFFFFFF)
+val md_theme_light_tertiaryContainer = Color(0xFFBCEBEE)
+val md_theme_light_onTertiaryContainer = Color(0xFF002022)
+val md_theme_light_error = Color(0xFFBA1A1A)
+val md_theme_light_onError = Color(0xFFFFFFFF)
+val md_theme_light_errorContainer = Color(0xFFFFDAD6)
+val md_theme_light_onErrorContainer = Color(0xFF410002)
+val md_theme_light_background = Color(0xFFFCFDF7)
+val md_theme_light_onBackground = Color(0xFF1A1C19)
+val md_theme_light_surface = Color(0xFFFCFDF7)
+val md_theme_light_onSurface = Color(0xFF1A1C19)
+val md_theme_light_surfaceVariant = Color(0xFFDEE5D9)
+val md_theme_light_onSurfaceVariant = Color(0xFF424940)
+val md_theme_light_outline = Color(0xFF72796F)
+val md_theme_light_outlineVariant = Color(0xFFC2C9BD)
+val md_theme_light_scrim = Color(0xFF000000)
+val md_theme_light_inverseSurface = Color(0xFF2F312D)
+val md_theme_light_inverseOnSurface = Color(0xFFF0F1EB)
+val md_theme_light_inversePrimary = Color(0xFFACD5AD)
+val md_theme_light_surfaceDim = Color(0xFFDCDDD8)
+val md_theme_light_surfaceBright = Color(0xFFFCFDF7)
+val md_theme_light_surfaceContainerLowest = Color(0xFFFFFFFF)
+val md_theme_light_surfaceContainerLow = Color(0xFFF6F7F2)
+val md_theme_light_surfaceContainer = Color(0xFFF0F1EC)
+val md_theme_light_surfaceContainerHigh = Color(0xFFEAECE6)
+val md_theme_light_surfaceContainerHighest = Color(0xFFE4E6E1)
+
+// 深色主题颜色
+val md_theme_dark_primary = Color(0xFFACD5AD)
+val md_theme_dark_onPrimary = Color(0xFF00390F)
+val md_theme_dark_primaryContainer = Color(0xFF205224)
+val md_theme_dark_onPrimaryContainer = Color(0xFFC8E6C9)
+val md_theme_dark_secondary = Color(0xFFB9CCB5)
+val md_theme_dark_onSecondary = Color(0xFF253423)
+val md_theme_dark_secondaryContainer = Color(0xFF3B4B38)
+val md_theme_dark_onSecondaryContainer = Color(0xFFD5E8D0)
+val md_theme_dark_tertiary = Color(0xFFA0CFD2)
+val md_theme_dark_onTertiary = Color(0xFF00363A)
+val md_theme_dark_tertiaryContainer = Color(0xFF1E4D51)
+val md_theme_dark_onTertiaryContainer = Color(0xFFBCEBEE)
+val md_theme_dark_error = Color(0xFFFFB4AB)
+val md_theme_dark_onError = Color(0xFF690005)
+val md_theme_dark_errorContainer = Color(0xFF93000A)
+val md_theme_dark_onErrorContainer = Color(0xFFFFDAD6)
+val md_theme_dark_background = Color(0xFF1A1C19)
+val md_theme_dark_onBackground = Color(0xFFE4E6E1)
+val md_theme_dark_surface = Color(0xFF1A1C19)
+val md_theme_dark_onSurface = Color(0xFFE4E6E1)
+val md_theme_dark_surfaceVariant = Color(0xFF424940)
+val md_theme_dark_onSurfaceVariant = Color(0xFFC2C9BD)
+val md_theme_dark_outline = Color(0xFF8C9388)
+val md_theme_dark_outlineVariant = Color(0xFF424940)
+val md_theme_dark_scrim = Color(0xFF000000)
+val md_theme_dark_inverseSurface = Color(0xFFE4E6E1)
+val md_theme_dark_inverseOnSurface = Color(0xFF2F312D)
+val md_theme_dark_inversePrimary = Color(0xFF4CAF50)
+val md_theme_dark_surfaceDim = Color(0xFF1A1C19)
+val md_theme_dark_surfaceBright = Color(0xFF40423E)
+val md_theme_dark_surfaceContainerLowest = Color(0xFF141714)
+val md_theme_dark_surfaceContainerLow = Color(0xFF222420)
+val md_theme_dark_surfaceContainer = Color(0xFF262825)
+val md_theme_dark_surfaceContainerHigh = Color(0xFF31332F)
+val md_theme_dark_surfaceContainerHighest = Color(0xFF3C3E3A)
+
+// 自定义颜色
+val StoryCardBackground = Color(0xFFFFFFFF)
+val StoryCardShadow = Color(0x1A000000)
+val CategoryCardBackground = Color(0xFFF5F5F5)
+val PlayerControlBackground = Color(0xFFFFFFFF)
+val PlayerProgress = Color(0xFF4CAF50)
+val PlayerProgressBackground = Color(0xFFE0E0E0)
+val FavoriteColor = Color(0xFFFF4081)
+val PlayButtonColor = Color(0xFF4CAF50)
+val PauseButtonColor = Color(0xFFFF9800)
+val StopButtonColor = Color(0xFFF44336)
+
+// 分类颜色
+val CategoryConversation = Color(0xFF2196F3)
+val CategoryPicture = Color(0xFF9C27B0)
+val CategoryBedtime = Color(0xFF673AB7)
+val CategoryIdiom = Color(0xFFFF5722)
+val CategoryFable = Color(0xFF009688)
+val CategoryScience = Color(0xFF00BCD4)
+
+// 标签颜色
+val TagBackground = Color(0xFFE8F5E9)
+val TagText = Color(0xFF2E7D32)
+val AgeTagBackground = Color(0xFFFFF3E0)
+val AgeTagText = Color(0xFFEF6C00)
+
+// 导入状态颜色
+val ImportSuccess = Color(0xFF4CAF50)
+val ImportProcessing = Color(0xFFFF9800)
+val ImportFailed = Color(0xFFF44336)
+
+// 透明颜色
+val Transparent = Color(0x00000000)
+val SemiTransparentBlack = Color(0x80000000)
+val SemiTransparentWhite = Color(0x80FFFFFF)
+
+// 护眼模式颜色
+val EyeProtectionBackground = Color(0xFFF5F5DC)
+val EyeProtectionText = Color(0xFF5D4037)
+val EyeProtectionCard = Color(0xFFFFFFFF)
+
+// 主界面颜色
+val WelcomeBannerBackground = Color(0xFF4CAF50)
+val SearchBarBackground = Color(0xFFF5F5F5)
+val CategoryCardBackground = Color(0xFFF5F5F5)
+
+// 文本颜色
+val TextPrimary = Color(0xFF1A1C19)
+val TextSecondary = Color(0xFF424940)
+val TextDisabled = Color(0xFF72796F)
+
+// 主题颜色别名
+val PrimaryColor = Color(0xFF4CAF50)
+val SecondaryColor = Color(0xFF52634F)
+val TertiaryColor = Color(0xFF386568)
