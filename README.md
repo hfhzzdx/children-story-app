@@ -165,7 +165,7 @@ children-story-app/
 
 ## 联系方式
 
-- 开发者：霍风浩
+- 开发者：hfhzzdx
 - 项目主页：https://github.com/yourusername/children-story-app
 - 问题反馈：请使用GitHub Issues
 
