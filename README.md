@@ -71,23 +71,44 @@ app/src/main/java/com/dunzi/storyhouse/
 4. 连接设备或启动模拟器
 5. 运行应用
 
-### GitHub Actions 构建
-项目已配置GitHub Actions工作流，支持自动构建和测试：
+### GitHub Actions 自动化构建
+项目已配置完整的GitHub Actions CI/CD流水线，支持自动构建、测试和部署：
 
-![Android CI](https://github.com/你的用户名/children-story-app/actions/workflows/android-build.yml/badge.svg)
+![Android CI](https://github.com/你的用户名/children-story-app/actions/workflows/build.yml/badge.svg)
+![CI/CD Pipeline](https://github.com/你的用户名/children-story-app/actions/workflows/ci.yml/badge.svg)
 
-**构建步骤**:
-1. 推送到 `main` 或 `master` 分支
-2. GitHub Actions自动触发构建
-3. 生成Debug APK作为构建产物
-4. 执行单元测试并生成测试报告
+#### 可用工作流：
+1. **基础构建工作流** (`build.yml`)
+   - 自动构建Debug和Release APK
+   - 运行单元测试
+   - 上传构建产物和测试报告
 
-**查看构建结果**:
-- 访问仓库的"Actions"标签页
-- 查看最新构建的运行状态
-- 下载生成的APK文件
+2. **完整CI/CD流水线** (`ci.yml`)
+   - 代码质量检查
+   - 安全扫描
+   - 自动化部署
+   - 通知和监控
 
-详细构建指南请参考 [GITHUB_ACTIONS_BUILD.md](GITHUB_ACTIONS_BUILD.md)
+#### 触发条件：
+- **自动触发**：推送到 `main`/`master`/`develop` 分支或创建PR时
+- **手动触发**：通过GitHub Actions界面手动运行
+- **标签发布**：推送到 `v*` 标签时自动创建Release
+
+#### 构建产物：
+- **APK文件**：Debug和Release版本
+- **测试报告**：单元测试和仪器测试结果
+- **构建报告**：详细的构建日志和分析
+- **安全报告**：MobSF安全扫描结果
+
+#### 使用步骤：
+1. 将代码推送到GitHub仓库
+2. 访问仓库的"Actions"标签页
+3. 查看构建状态和下载产物
+4. 根据测试报告修复问题
+
+详细配置和使用指南请参考：
+- [GITHUB_ACTIONS_BUILD.md](GITHUB_ACTIONS_BUILD.md) - 基础构建指南
+- [.github/workflows/README.md](.github/workflows/README.md) - 工作流详细说明
 
 ## 数据库设计
 

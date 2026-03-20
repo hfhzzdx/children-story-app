@@ -15,7 +15,7 @@ required_files=(
     "settings.gradle"
     "gradle/wrapper/gradle-wrapper.properties"
     "app/src/main/AndroidManifest.xml"
-    ".github/workflows/android-build.yml"
+    ".github/workflows/build.yml"
     "README.md"
 )
 

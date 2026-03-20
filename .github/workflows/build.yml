@@ -1,10 +1,11 @@
-name: Android CI
+name: Build Android App
 
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
@@ -22,6 +23,11 @@ jobs:
     
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        api-level: 34
+        build-tools: 34.0.0
+        ndk: 25.2.9519653
+        cmake: 3.22.1
     
     - name: Accept Android SDK licenses
       run: |
@@ -38,21 +44,30 @@ jobs:
           ${{ runner.os }}-gradle-
     
     - name: Make gradlew executable
-      run: chmod +x gradlew
+      run: chmod +x ./gradlew
     
-    - name: Build with Gradle
+    - name: Build Debug APK
       run: ./gradlew assembleDebug
     
-    - name: Upload APK artifact
-      if: success()
+    - name: Build Release APK
+      run: ./gradlew assembleRelease
+    
+    - name: Run unit tests
+      run: ./gradlew testDebugUnitTest
+    
+    - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/apk/debug/*.apk
         retention-days: 7
     
-    - name: Run tests
-      run: ./gradlew testDebugUnitTest
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-release-apk
+        path: app/build/outputs/apk/release/*.apk
+        retention-days: 7
     
     - name: Upload test results
       if: always()
@@ -60,4 +75,14 @@ jobs:
       with:
         name: test-results
         path: app/build/reports/tests/
+        retention-days: 7
+    
+    - name: Upload build reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-reports
+        path: |
+          app/build/reports/
+          app/build/outputs/logs/
         retention-days: 7
