@@ -220,16 +220,6 @@ jobs:
     needs: [deploy]
     if: always()
     
-    steps:
-    - name: Send Slack notification
-      uses: 8398a7/action-slack@v3
-      with:
-        status: ${{ job.status }}
-        author_name: Android CI/CD Pipeline
-        fields: repo,message,commit,author,action
-        channel: '#android-builds'
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
   monitor:
     name: 监控
