@@ -310,7 +310,7 @@
     <string name="child_info_title">儿童信息</string>
     <string name="unknown_child">未知儿童</string>
     <string name="edit_child_info">编辑儿童信息</string>
-    <string name="child_avatar">儿童头像</string>
+    <string name="child_avatar_pic">儿童头像</string>
     <string name="playback_settings_title">播放设置</string>
     <string name="volume_setting">音量设置</string>
     <string name="playback_speed">播放速度</string>

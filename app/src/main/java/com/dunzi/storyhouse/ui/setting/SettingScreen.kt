@@ -394,7 +394,7 @@ fun ChildInfoSection(
                 if (childInfo?.avatar != null) {
                     AsyncImage(
                         model = childInfo.avatar,
-                        contentDescription = stringResource(R.string.child_avatar),
+                        contentDescription = stringResource(R.string.child_avatar_pic),
                         modifier = Modifier
                             .size(48.dp)
                             .clip(CircleShape)
