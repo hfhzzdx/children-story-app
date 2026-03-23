@@ -24,7 +24,7 @@ class StoryApplication : Application() {
         super.onCreate()
         
         // 初始化日志
-        if (BuildConfig.DEBUG) {
+        if (applicationContext.applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE != 0) {
             Timber.plant(Timber.DebugTree())
         }
         

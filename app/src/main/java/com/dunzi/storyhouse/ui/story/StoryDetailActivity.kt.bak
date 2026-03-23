@@ -4,7 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
@@ -14,8 +21,24 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -114,7 +137,7 @@ class StoryDetailActivity : ComponentActivity() {
         }
     }
     
-    private val viewModel: com.dunzi.storyhouse.ui.story.StoryDetailViewModel by viewModels()
+    private val viewModel: StoryDetailViewModel by viewModels()
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -141,6 +164,85 @@ class StoryDetailActivity : ComponentActivity() {
  * 故事详情视图模型
  */
 @AndroidEntryPoint
+class StoryDetailViewModel @androidx.hilt.lifecycle.ViewModelInject constructor(
+    private val storyRepository: com.dunzi.storyhouse.data.repository.StoryRepository
+) : androidx.lifecycle.ViewModel() {
+    
+    private val _story = androidx.compose.runtime.mutableStateOf<com.dunzi.storyhouse.data.model.Story?>(null)
+    val story: androidx.compose.runtime.State<com.dunzi.storyhouse.data.model.Story?> = _story
+    
+    private val _isLoading = androidx.compose.runtime.mutableStateOf(true)
+    val isLoading: androidx.compose.runtime.State<Boolean> = _isLoading
+    
+    private val _error = androidx.compose.runtime.mutableStateOf<String?>(null)
+    val error: androidx.compose.runtime.State<String?> = _error
+    
+    fun loadStory(storyId: Long) {
+        _isLoading.value = true
+        _error.value = null
+        
+        viewModelScope.launch {
+            try {
+                storyRepository.getStoryById(storyId).collect { story ->
+                    _story.value = story
+                    _isLoading.value = false
+                }
+            } catch (e: Exception) {
+                _error.value = "加载故事失败: ${e.message}"
+                _isLoading.value = false
+            }
+        }
+    }
+    
+    fun toggleFavorite(storyId: Long) {
+        viewModelScope.launch {
+            try {
+                val currentStory = _story.value
+                if (currentStory != null) {
+                    val isFavorite = currentStory.isFavorite
+                    storyRepository.toggleFavorite(storyId, !isFavorite)
+                    
+                    // 更新本地状态
+                    _story.value = currentStory.copy(isFavorite = !isFavorite)
+                }
+            } catch (e: Exception) {
+                _error.value = "收藏操作失败: ${e.message}"
+            }
+        }
+    }
+    
+    fun clearError() {
+        _error.value = null
+    }
+}
+
+/**
+ * 故事详情界面
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun StoryDetailScreen(
+    storyId: Long,
+    viewModel: StoryDetailViewModel,
+    onBack: () -> Unit
+) {
+    val story by viewModel.story
+    val isLoading by viewModel.isLoading
+    val error by viewModel.error
+    val snackbarHostState = remember { androidx.compose.material3.SnackbarHostState() }
+    
+    // 加载故事
+    LaunchedEffect(storyId) {
+        viewModel.loadStory(storyId)
+    }
+    
+    // 显示错误消息
+    LaunchedEffect(error) {
+        error?.let { errorMessage ->
+            snackbarHostState.showSnackbar(errorMessage)
+            viewModel.clearError()
+        }
+    }
     
     Scaffold(
         topBar = {

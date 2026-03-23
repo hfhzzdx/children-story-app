@@ -120,7 +120,6 @@ val EyeProtectionCard = Color(0xFFFFFFFF)
 // 主界面颜色
 val WelcomeBannerBackground = Color(0xFF4CAF50)
 val SearchBarBackground = Color(0xFFF5F5F5)
-val CategoryCardBackground = Color(0xFFF5F5F5)
 
 // 文本颜色
 val TextPrimary = Color(0xFF1A1C19)

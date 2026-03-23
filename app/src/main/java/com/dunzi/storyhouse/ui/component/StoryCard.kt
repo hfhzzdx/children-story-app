@@ -192,32 +192,7 @@ fun StoryCard(
     }
 }
 
-/**
- * 年龄标签组件
- */
-@Composable
-fun AgeTag(
-    minAge: Int,
-    maxAge: Int,
-    modifier: Modifier = Modifier
-) {
-    Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(TagBackground)
-            .padding(horizontal = 8.dp, vertical = 4.dp)
-    ) {
-        Text(
-            text = if (minAge == maxAge) {
-                "$minAge岁"
-            } else {
-                "${minAge}-${maxAge}岁"
-            },
-            style = TagTextStyle,
-            color = TagText
-        )
-    }
-}
+
 
 /**
  * 故事列表项组件（用于列表视图）
@@ -383,34 +358,3 @@ fun StoryListItem(
     }
 }
 
-/**
- * 分类标签组件
- */
-@Composable
-fun CategoryTag(
-    category: String,
-    modifier: Modifier = Modifier
-) {
-    val categoryColor = when (category) {
-        "通话故事" -> com.dunzi.storyhouse.ui.theme.CategoryConversation
-        "绘本故事" -> com.dunzi.storyhouse.ui.theme.CategoryPicture
-        "睡前故事" -> com.dunzi.storyhouse.ui.theme.CategoryBedtime
-        "成语故事" -> com.dunzi.storyhouse.ui.theme.CategoryIdiom
-        "寓言故事" -> com.dunzi.storyhouse.ui.theme.CategoryFable
-        "科普故事" -> com.dunzi.storyhouse.ui.theme.CategoryScience
-        else -> MaterialTheme.colorScheme.primary
-    }
-    
-    Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(categoryColor.copy(alpha = 0.1f))
-            .padding(horizontal = 8.dp, vertical = 4.dp)
-    ) {
-        Text(
-            text = category,
-            style = TagTextStyle,
-            color = categoryColor
-        )
-    }
-}

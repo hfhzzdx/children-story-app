@@ -180,36 +180,6 @@ class AudioPlaybackService : Service() {
     private fun initializePlayer() {
         player = ExoPlayer.Builder(this).build().apply {
             addListener(object : Player.Listener {
-                override fun onPlaybackStateChanged(playbackState: Int) {
-                    when (playbackState) {
-                        Player.STATE_READY -> {
-                            // 播放器准备就绪
-                        }
-                        Player.STATE_ENDED -> {
-                            // 播放完成
-                            onPlaybackCompleted()
-                        }
-                        Player.STATE_BUFFERING -> {
-                            // 缓冲中
-                        }
-                        Player.STATE_IDLE -> {
-                            // 空闲状态
-                        }
-                    }
-                }
-                
-                override fun onIsPlayingChanged(isPlaying: Boolean) {
-                    this@AudioPlaybackService.isPlaying = isPlaying
-                    updateNotification()
-                    
-                    if (isPlaying) {
-                        startProgressUpdates()
-                    } else {
-                        stopProgressUpdates()
-                    }
-                }
-                
-                override fun onPlaybackStateChanged(playbackState: Int) {
                     when (playbackState) {
                         Player.STATE_READY -> {
                             // 播放器准备就绪

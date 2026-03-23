@@ -156,42 +156,6 @@ class PlayerViewModel @Inject constructor(
     /**
      * 调整播放速度
      */
-    fun adjustPlaybackSpeed(newSpeed: Float) {
-        _playerState.update { state ->
-            state.copy(playbackSpeed = newSpeed)
-        }
-        
-        // 保存到用户设置
-        viewModelScope.launch {
-            userSettingsRepository.updatePlaybackSpeed(newSpeed)
-        }
-    }
-    
-    /**
-     * 调整音量
-     */
-    fun adjustVolume(newVolume: Float) {
-        _playerState.update { state ->
-            state.copy(volume = newVolume)
-        }
-        
-        // 保存到用户设置
-        viewModelScope.launch {
-            userSettingsRepository.updateDefaultVolume(newVolume)
-        }
-    }
-    
-    /**
-     * 切换随机播放
-     */
-    fun toggleShuffle() {
-        _playerState.update { state ->
-            state.copy(shuffleEnabled = !state.shuffleEnabled)
-        }
-        
-        // 保存到用户设置
-        viewModelScope.launch {
-            userSettingsRepository.updateShuffleEnabled(!_playerState.value.shuffleEnabled)
         }
     }
     
@@ -259,34 +223,6 @@ class PlayerViewModel @Inject constructor(
      */
     fun setSleepTimer(minutes: Int) {
         val duration = minutes * 60 * 1000L // 转换为毫秒
-        
-        // 更新状态
-        _playerState.update { state ->
-            state.copy(
-                sleepTimerDuration = duration,
-                sleepTimerStartTime = System.currentTimeMillis()
-            )
-        }
-        
-        // 发送到服务
-        AudioPlaybackService.setSleepTimer(android.content.ContextWrapper(null).baseContext, duration)
-        
-        // 保存到用户设置
-        viewModelScope.launch {
-            userSettingsRepository.updateSleepTimerDuration(minutes)
-        }
-    }
-    
-    /**
-     * 取消睡眠定时器
-     */
-    fun cancelSleepTimer() {
-        _playerState.update { state ->
-            state.copy(
-                sleepTimerDuration = 0L,
-                sleepTimerStartTime = 0L
-            )
-        }
         
         // 发送到服务
         AudioPlaybackService.cancelSleepTimer(android.content.ContextWrapper(null).baseContext)
@@ -397,21 +333,6 @@ class PlayerViewModel @Inject constructor(
     
     /**
      * 设置播放列表
-     */
-    fun setPlaylist(stories: List<com.dunzi.storyhouse.data.model.Story>) {
-        _playlist.value = stories
-    }
-    
-    /**
-     * 切换随机播放
-     */
-    fun toggleShuffle() {
-        _playerState.update { state ->
-            state.copy(shuffleEnabled = !state.shuffleEnabled)
-        }
-        
-        // 更新用户设置
-        viewModelScope.launch {
             userSettingsRepository.updatePlayMode(
                 shuffle = _playerState.value.shuffleEnabled
             )
@@ -441,23 +362,6 @@ class PlayerViewModel @Inject constructor(
                 RepeatMode.REPEAT_ONE -> "repeat_one"
             }
             userSettingsRepository.updatePlayMode(mode = modeString)
-        }
-    }
-    
-    /**
-     * 调整音量
-     */
-    fun adjustVolume(volume: Float) {
-        _playerState.update { state ->
-            state.copy(volume = volume.coerceIn(0f, 1f))
-        }
-        
-        // 更新用户设置
-        viewModelScope.launch {
-            userSettingsRepository.updatePlaybackSettings(volume = volume)
-        }
-    }
-    
     /**
      * 调整播放速度
      */
@@ -500,21 +404,6 @@ class PlayerViewModel @Inject constructor(
             _playerState.update { state ->
                 state.copy(playStats = stats)
             }
-        }
-    }
-    
-    /**
-     * 清除错误
-     */
-    fun clearError() {
-        _playerState.update { state ->
-            state.copy(error = null)
-        }
-    }
-    
-    /**
-     * 播放器状态
-     */
     data class PlayerState(
         val currentStory: com.dunzi.storyhouse.data.model.Story? = null,
         val isPlaying: Boolean = false,

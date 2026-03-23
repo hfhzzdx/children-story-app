@@ -287,19 +287,3 @@ val AgeTagTextStyle = TextStyle(
     color = AgeTagText
 )
 
-// 设置界面排版样式
-val SettingTitleStyle = TextStyle(
-    fontFamily = FontFamily.Default,
-    fontWeight = FontWeight.Bold,
-    fontSize = 16.sp,
-    lineHeight = 24.sp,
-    color = TextPrimary
-)
-
-val SettingDescriptionStyle = TextStyle(
-    fontFamily = FontFamily.Default,
-    fontWeight = FontWeight.Normal,
-    fontSize = 14.sp,
-    lineHeight = 20.sp,
-    color = TextSecondary
-)
