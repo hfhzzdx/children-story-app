@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 颜色属性 -->
+    <attr name="colorTertiaryVariant" format="color|reference" />
+    <attr name="colorBackground" format="color|reference" />
+    
+    <!-- 形状属性 -->
+    <attr name="shapeCornerSmall" format="dimension|reference" />
+    <attr name="shapeCornerMedium" format="dimension|reference" />
+    <attr name="shapeCornerLarge" format="dimension|reference" />
+    <attr name="shapeCornerExtraLarge" format="dimension|reference" />
+    
+    <!-- 字体属性 -->
+    <attr name="fontFamilyMedium" format="string|reference" />
+    <attr name="fontFamilyRegular" format="string|reference" />
+    
+    <!-- 卡片样式 -->
+    <attr name="cardCornerRadius" format="dimension|reference" />
+    <attr name="cardElevation" format="dimension|reference" />
+    <attr name="cardBackgroundColor" format="color|reference" />
+    
+    <!-- 文本样式 -->
+    <declare-styleable name="TextAppearance">
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:fontFamily" />
+        <attr name="android:letterSpacing" />
+        <attr name="android:lineSpacingExtra" />
+    </declare-styleable>
+    
+    <!-- 按钮样式 -->
+    <declare-styleable name="ButtonStyle">
+        <attr name="android:backgroundTint" />
+        <attr name="android:textColor" />
+        <attr name="cornerRadius" />
+        <attr name="android:minHeight" />
+        <attr name="strokeColor" />
+        <attr name="strokeWidth" />
+    </declare-styleable>
+    
+    <!-- 编辑文本样式 -->
+    <declare-styleable name="EditTextStyle">
+        <attr name="boxStrokeColor" />
+        <attr name="boxStrokeWidth" />
+        <attr name="boxCornerRadiusTopStart" />
+        <attr name="boxCornerRadiusTopEnd" />
+        <attr name="boxCornerRadiusBottomStart" />
+        <attr name="boxCornerRadiusBottomEnd" />
+    </declare-styleable>
+</resources>

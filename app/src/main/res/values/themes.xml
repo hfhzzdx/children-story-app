@@ -169,6 +169,13 @@
     </style>
     
     <!-- 儿童友好文本样式 -->
+    <style name="Text.Child" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    
     <style name="Text.Child.Large">
         <item name="android:textColor">?attr/colorOnBackground</item>
         <item name="android:textSize">20sp</item>
@@ -191,6 +198,13 @@
     </style>
     
     <!-- 卡片样式 -->
+    <style name="Card">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
     <style name="Card.Story">
         <item name="cardCornerRadius">12dp</item>
         <item name="cardElevation">2dp</item>

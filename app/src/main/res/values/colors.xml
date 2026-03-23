@@ -2,8 +2,10 @@
 <resources>
     <!-- 主题颜色 -->
     <color name="colorPrimary">#4CAF50</color>
+    <color name="primary">#4CAF50</color>
     <color name="colorPrimaryVariant">#388E3C</color>
     <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="on_primary">#FFFFFF</color>
     
     <color name="colorSecondary">#FF9800</color>
     <color name="colorSecondaryVariant">#F57C00</color>
@@ -18,9 +20,13 @@
     <color name="colorOnBackground">#1A1C19</color>
     
     <color name="colorSurface">#FCFDF7</color>
+    <color name="surface">#FCFDF7</color>
     <color name="colorOnSurface">#1A1C19</color>
     <color name="colorSurfaceVariant">#DEE5D9</color>
     <color name="colorOnSurfaceVariant">#424940</color>
+    
+    <!-- 底部导航颜色 -->
+    <color name="bottom_navigation_color">@color/colorPrimary</color>
     
     <!-- 错误颜色 -->
     <color name="colorError">#BA1A1A</color>
@@ -44,6 +50,7 @@
     <color name="colorOnBackgroundDark">#E4E6E1</color>
     
     <!-- 自定义颜色 -->
+    <color name="card_background">#FFFFFF</color>
     <color name="story_card_background">#FFFFFF</color>
     <color name="story_card_shadow">#1A000000</color>
     

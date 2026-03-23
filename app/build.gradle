@@ -101,7 +101,8 @@ dependencies {
     
     // File Parsing
     //implementation 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
-    implementation 'com.github.barteksc:AndroidPdfViewer:3.1.0-beta.1'
+    // 暂时注释掉PDF查看器，因为它引入了旧的Support库
+    // implementation 'com.github.barteksc:AndroidPdfViewer:3.1.0-beta.1'
     implementation 'org.jsoup:jsoup:1.17.2'
     
     // Network

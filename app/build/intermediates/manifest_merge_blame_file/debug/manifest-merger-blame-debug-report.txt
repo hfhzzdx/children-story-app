@@ -1,0 +1,598 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dunzi.storyhouse"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- 权限声明 -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:6:5-67
+12-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:7:5-79
+13-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:8:5-68
+14-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:8:22-65
+15
+16    <!-- 存储权限（用于导入故事） -->
+17    <uses-permission
+17-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:11:5-12:38
+18        android:name="android.permission.READ_EXTERNAL_STORAGE"
+18-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:11:22-77
+19        android:maxSdkVersion="32" />
+19-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:12:9-35
+20    <uses-permission
+20-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:13:5-14:38
+21        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+21-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:13:22-78
+22        android:maxSdkVersion="32" />
+22-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:14:9-35
+23
+24    <!-- Android 13+ 媒体权限 -->
+25    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+25-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:17:5-75
+25-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:17:22-72
+26    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+26-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:18:5-76
+26-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:18:22-73
+27    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+27-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:19:5-75
+27-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:19:22-72
+28
+29    <!-- 音频权限 -->
+30    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+30-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:22:5-71
+30-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:22:22-68
+31
+32    <!-- 后台服务权限 -->
+33    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+33-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:25:5-77
+33-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:25:22-74
+34    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+34-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:26:5-92
+34-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:26:22-89
+35
+36    <!-- 特性声明 -->
+37    <uses-feature
+37-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:29:5-89
+38        android:name="android.hardware.microphone"
+38-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:29:19-61
+39        android:required="false" />
+39-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:29:62-86
+40
+41    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+41-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:25:5-81
+41-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:25:22-78
+42
+43    <permission
+43-->[androidx.core:core:1.13.1] /home/hfh/.gradle/caches/transforms-3/d1f03751a09755903fe2ed0eda365ac8/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+44        android:name="com.dunzi.storyhouse.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+44-->[androidx.core:core:1.13.1] /home/hfh/.gradle/caches/transforms-3/d1f03751a09755903fe2ed0eda365ac8/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+45        android:protectionLevel="signature" />
+45-->[androidx.core:core:1.13.1] /home/hfh/.gradle/caches/transforms-3/d1f03751a09755903fe2ed0eda365ac8/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+46
+47    <uses-permission android:name="com.dunzi.storyhouse.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+47-->[androidx.core:core:1.13.1] /home/hfh/.gradle/caches/transforms-3/d1f03751a09755903fe2ed0eda365ac8/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+47-->[androidx.core:core:1.13.1] /home/hfh/.gradle/caches/transforms-3/d1f03751a09755903fe2ed0eda365ac8/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+48
+49    <application
+49-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:31:5-154:19
+50        android:name="com.dunzi.storyhouse.StoryApplication"
+50-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:32:9-41
+51        android:allowBackup="true"
+51-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:33:9-35
+52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+52-->[androidx.core:core:1.13.1] /home/hfh/.gradle/caches/transforms-3/d1f03751a09755903fe2ed0eda365ac8/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+53        android:dataExtractionRules="@xml/data_extraction_rules"
+53-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:34:9-65
+54        android:debuggable="true"
+55        android:extractNativeLibs="true"
+56        android:fullBackupContent="@xml/backup_rules"
+56-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:35:9-54
+57        android:icon="@mipmap/ic_launcher"
+57-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:36:9-43
+58        android:label="@string/app_name"
+58-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:37:9-41
+59        android:roundIcon="@mipmap/ic_launcher_round"
+59-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:38:9-54
+60        android:supportsRtl="true"
+60-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:39:9-35
+61        android:theme="@style/Theme.ChildrenStoryApp"
+61-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:40:9-54
+62        android:usesCleartextTraffic="true" >
+62-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:41:9-44
+63
+64        <!-- 主活动 -->
+65        <activity
+65-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:45:9-64:20
+66            android:name="com.dunzi.storyhouse.ui.MainActivity"
+66-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:46:13-44
+67            android:configChanges="orientation|screenSize|keyboardHidden"
+67-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:48:13-74
+68            android:exported="true"
+68-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:47:13-36
+69            android:launchMode="singleTop"
+69-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:49:13-43
+70            android:windowSoftInputMode="adjustResize" >
+70-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:50:13-55
+71            <intent-filter>
+71-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:51:13-54:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:52:17-69
+72-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:52:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:53:17-77
+74-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:53:27-74
+75            </intent-filter>
+76
+77            <!-- 深链接支持 -->
+78            <intent-filter>
+78-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:57:13-63:29
+79                <action android:name="android.intent.action.VIEW" />
+79-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:58:17-69
+79-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:58:25-66
+80
+81                <category android:name="android.intent.category.DEFAULT" />
+81-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:59:17-76
+81-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:59:27-73
+82                <category android:name="android.intent.category.BROWSABLE" />
+82-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:60:17-78
+82-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:60:27-75
+83
+84                <data android:scheme="storyhouse" />
+84-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:61:17-53
+84-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:61:23-50
+85                <data android:host="open" />
+85-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:61:17-53
+85-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:62:23-42
+86            </intent-filter>
+87        </activity>
+88
+89        <!-- 播放器活动 -->
+90        <activity
+90-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:67:9-71:68
+91            android:name="com.dunzi.storyhouse.ui.player.PlayerActivity"
+91-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:68:13-53
+92            android:configChanges="orientation|screenSize|keyboardHidden"
+92-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:70:13-74
+93            android:exported="false"
+93-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:69:13-37
+94            android:theme="@style/Theme.ChildrenStoryApp.Player" />
+94-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:71:13-65
+95
+96        <!-- 故事详情活动 -->
+97        <activity
+97-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:74:9-78:61
+98            android:name="com.dunzi.storyhouse.ui.story.StoryDetailActivity"
+98-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:75:13-57
+99            android:configChanges="orientation|screenSize|keyboardHidden"
+99-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:77:13-74
+100            android:exported="false"
+100-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:76:13-37
+101            android:parentActivityName="com.dunzi.storyhouse.ui.MainActivity" />
+101-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:78:13-58
+102
+103        <!-- 导入活动 -->
+104        <activity
+104-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:81:9-85:61
+105            android:name="com.dunzi.storyhouse.ui.import.ImportActivity"
+105-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:82:13-53
+106            android:configChanges="orientation|screenSize|keyboardHidden"
+106-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:84:13-74
+107            android:exported="false"
+107-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:83:13-37
+108            android:parentActivityName="com.dunzi.storyhouse.ui.MainActivity" />
+108-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:85:13-58
+109
+110        <!-- 设置活动 -->
+111        <activity
+111-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:88:9-92:61
+112            android:name="com.dunzi.storyhouse.ui.setting.SettingActivity"
+112-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:89:13-55
+113            android:configChanges="orientation|screenSize|keyboardHidden"
+113-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:91:13-74
+114            android:exported="false"
+114-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:90:13-37
+115            android:parentActivityName="com.dunzi.storyhouse.ui.MainActivity" />
+115-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:92:13-58
+116
+117        <!-- 播放历史活动 -->
+118        <activity
+118-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:95:9-99:61
+119            android:name="com.dunzi.storyhouse.ui.history.PlayHistoryActivity"
+119-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:96:13-59
+120            android:configChanges="orientation|screenSize|keyboardHidden"
+120-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:98:13-74
+121            android:exported="false"
+121-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:97:13-37
+122            android:parentActivityName="com.dunzi.storyhouse.ui.MainActivity" />
+122-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:99:13-58
+123
+124        <!-- 服务 -->
+125        <service
+125-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:102:9-105:61
+126            android:name="com.dunzi.storyhouse.service.AudioPlaybackService"
+126-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:103:13-57
+127            android:exported="false"
+127-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:104:13-37
+128            android:foregroundServiceType="mediaPlayback" />
+128-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:105:13-58
+129        <service
+129-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:107:9-109:40
+130            android:name="com.dunzi.storyhouse.service.StoryImportService"
+130-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:108:13-55
+131            android:exported="false" />
+131-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:109:13-37
+132
+133        <!-- 接收器 -->
+134        <receiver
+134-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:112:9-122:20
+135            android:name="com.dunzi.storyhouse.receiver.PlaybackReceiver"
+135-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:113:13-54
+136            android:exported="false" >
+136-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:114:13-37
+137            <intent-filter>
+137-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:115:13-121:29
+138                <action android:name="com.dunzi.storyhouse.action.PLAY" />
+138-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:116:17-75
+138-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:116:25-72
+139                <action android:name="com.dunzi.storyhouse.action.PAUSE" />
+139-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:117:17-76
+139-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:117:25-73
+140                <action android:name="com.dunzi.storyhouse.action.STOP" />
+140-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:118:17-75
+140-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:118:25-72
+141                <action android:name="com.dunzi.storyhouse.action.NEXT" />
+141-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:119:17-75
+141-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:119:25-72
+142                <action android:name="com.dunzi.storyhouse.action.PREVIOUS" />
+142-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:120:17-79
+142-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:120:25-76
+143            </intent-filter>
+144        </receiver>
+145        <receiver
+145-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:124:9-131:20
+146            android:name="com.dunzi.storyhouse.receiver.BootReceiver"
+146-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:125:13-50
+147            android:exported="false" >
+147-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:126:13-37
+148            <intent-filter>
+148-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:127:13-130:29
+149                <action android:name="android.intent.action.BOOT_COMPLETED" />
+149-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:128:17-79
+149-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:128:25-76
+150                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+150-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:129:17-82
+150-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:129:25-79
+151            </intent-filter>
+152        </receiver>
+153
+154        <!-- 提供者 -->
+155        <provider
+156            android:name="androidx.core.content.FileProvider"
+156-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:135:13-62
+157            android:authorities="com.dunzi.storyhouse.fileprovider"
+157-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:136:13-64
+158            android:exported="false"
+158-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:137:13-37
+159            android:grantUriPermissions="true" >
+159-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:138:13-47
+160            <meta-data
+160-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:139:13-141:54
+161                android:name="android.support.FILE_PROVIDER_PATHS"
+161-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:140:17-67
+162                android:resource="@xml/file_paths" />
+162-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:141:17-51
+163        </provider>
+164
+165        <!-- 元数据 -->
+166        <meta-data
+166-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:145:9-147:70
+167            android:name="com.google.android.gms.ads.APPLICATION_ID"
+167-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:146:13-69
+168            android:value="ca-app-pub-3940256099942544~3347511713" />
+168-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:147:13-67
+169
+170        <!-- 兼容性 -->
+171        <uses-library
+171-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:150:9-152:40
+172            android:name="org.apache.http.legacy"
+172-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:151:13-50
+173            android:required="false" />
+173-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:152:13-37
+174
+175        <activity
+175-->[androidx.compose.ui:ui-test-manifest:1.6.3] /home/hfh/.gradle/caches/transforms-3/32f5d478330c3ea64f03dc6d37bd6dbf/transformed/ui-test-manifest-1.6.3/AndroidManifest.xml:23:9-25:39
+176            android:name="androidx.activity.ComponentActivity"
+176-->[androidx.compose.ui:ui-test-manifest:1.6.3] /home/hfh/.gradle/caches/transforms-3/32f5d478330c3ea64f03dc6d37bd6dbf/transformed/ui-test-manifest-1.6.3/AndroidManifest.xml:24:13-63
+177            android:exported="true" />
+177-->[androidx.compose.ui:ui-test-manifest:1.6.3] /home/hfh/.gradle/caches/transforms-3/32f5d478330c3ea64f03dc6d37bd6dbf/transformed/ui-test-manifest-1.6.3/AndroidManifest.xml:25:13-36
+178        <activity
+178-->[androidx.compose.ui:ui-tooling-android:1.6.3] /home/hfh/.gradle/caches/transforms-3/598ea1013a4d37b1552716f7fc4d6c81/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+179            android:name="androidx.compose.ui.tooling.PreviewActivity"
+179-->[androidx.compose.ui:ui-tooling-android:1.6.3] /home/hfh/.gradle/caches/transforms-3/598ea1013a4d37b1552716f7fc4d6c81/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+180            android:exported="true" />
+180-->[androidx.compose.ui:ui-tooling-android:1.6.3] /home/hfh/.gradle/caches/transforms-3/598ea1013a4d37b1552716f7fc4d6c81/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+181
+182        <provider
+182-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+183            android:name="androidx.startup.InitializationProvider"
+183-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+184            android:authorities="com.dunzi.storyhouse.androidx-startup"
+184-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+185            android:exported="false" >
+185-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+186            <meta-data
+186-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+187                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+187-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+188                android:value="androidx.startup" />
+188-->[androidx.emoji2:emoji2:1.3.0] /home/hfh/.gradle/caches/transforms-3/8a8a5e90c8c11a5c4ab0cfe12fb98d54/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+189            <meta-data
+189-->[androidx.lifecycle:lifecycle-process:2.8.0] /home/hfh/.gradle/caches/transforms-3/ffb394d550c9311a071d9af1fa119878/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:29:13-31:52
+190                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+190-->[androidx.lifecycle:lifecycle-process:2.8.0] /home/hfh/.gradle/caches/transforms-3/ffb394d550c9311a071d9af1fa119878/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:30:17-78
+191                android:value="androidx.startup" />
+191-->[androidx.lifecycle:lifecycle-process:2.8.0] /home/hfh/.gradle/caches/transforms-3/ffb394d550c9311a071d9af1fa119878/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:31:17-49
+192            <meta-data
+192-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:34:13-36:52
+193                android:name="androidx.work.WorkManagerInitializer"
+193-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:35:17-68
+194                android:value="androidx.startup" />
+194-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:36:17-49
+195            <meta-data
+195-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+196                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+196-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+197                android:value="androidx.startup" />
+197-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+198        </provider>
+199
+200        <service
+200-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:39:9-45:35
+201            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+201-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:40:13-88
+202            android:directBootAware="false"
+202-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:41:13-44
+203            android:enabled="@bool/enable_system_alarm_service_default"
+203-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:42:13-72
+204            android:exported="false" />
+204-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:43:13-37
+205        <service
+205-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:46:9-52:35
+206            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+206-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:47:13-84
+207            android:directBootAware="false"
+207-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:48:13-44
+208            android:enabled="@bool/enable_system_job_service_default"
+208-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:49:13-70
+209            android:exported="true"
+209-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:50:13-36
+210            android:permission="android.permission.BIND_JOB_SERVICE" />
+210-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:51:13-69
+211        <service
+211-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:53:9-59:35
+212            android:name="androidx.work.impl.foreground.SystemForegroundService"
+212-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:54:13-81
+213            android:directBootAware="false"
+213-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:55:13-44
+214            android:enabled="@bool/enable_system_foreground_service_default"
+214-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:56:13-77
+215            android:exported="false" />
+215-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:57:13-37
+216
+217        <receiver
+217-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:61:9-66:35
+218            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+218-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:62:13-88
+219            android:directBootAware="false"
+219-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:63:13-44
+220            android:enabled="true"
+220-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:64:13-35
+221            android:exported="false" />
+221-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:65:13-37
+222        <receiver
+222-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:67:9-77:20
+223            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+223-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:68:13-106
+224            android:directBootAware="false"
+224-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:69:13-44
+225            android:enabled="false"
+225-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:70:13-36
+226            android:exported="false" >
+226-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:71:13-37
+227            <intent-filter>
+227-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:73:13-76:29
+228                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+228-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:17-87
+228-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:25-84
+229                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+229-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:17-90
+229-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:25-87
+230            </intent-filter>
+231        </receiver>
+232        <receiver
+232-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:78:9-88:20
+233            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+233-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:79:13-104
+234            android:directBootAware="false"
+234-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:80:13-44
+235            android:enabled="false"
+235-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:81:13-36
+236            android:exported="false" >
+236-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:82:13-37
+237            <intent-filter>
+237-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:84:13-87:29
+238                <action android:name="android.intent.action.BATTERY_OKAY" />
+238-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:17-77
+238-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:25-74
+239                <action android:name="android.intent.action.BATTERY_LOW" />
+239-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:17-76
+239-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:25-73
+240            </intent-filter>
+241        </receiver>
+242        <receiver
+242-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:89:9-99:20
+243            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+243-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:90:13-104
+244            android:directBootAware="false"
+244-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:91:13-44
+245            android:enabled="false"
+245-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:92:13-36
+246            android:exported="false" >
+246-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:93:13-37
+247            <intent-filter>
+247-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:95:13-98:29
+248                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+248-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:17-83
+248-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:25-80
+249                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+249-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:17-82
+249-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:25-79
+250            </intent-filter>
+251        </receiver>
+252        <receiver
+252-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:100:9-109:20
+253            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+253-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:101:13-103
+254            android:directBootAware="false"
+254-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:102:13-44
+255            android:enabled="false"
+255-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:103:13-36
+256            android:exported="false" >
+256-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:104:13-37
+257            <intent-filter>
+257-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:106:13-108:29
+258                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+258-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:17-79
+258-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:25-76
+259            </intent-filter>
+260        </receiver>
+261        <receiver
+261-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:110:9-121:20
+262            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+262-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:111:13-88
+263            android:directBootAware="false"
+263-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:112:13-44
+264            android:enabled="false"
+264-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:113:13-36
+265            android:exported="false" >
+265-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:114:13-37
+266            <intent-filter>
+266-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:116:13-120:29
+267                <action android:name="android.intent.action.BOOT_COMPLETED" />
+267-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:128:17-79
+267-->/home/hfh/.openclaw/workspace/children-story-app/app/src/main/AndroidManifest.xml:128:25-76
+268                <action android:name="android.intent.action.TIME_SET" />
+268-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:17-73
+268-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:25-70
+269                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+269-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:17-81
+269-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:25-78
+270            </intent-filter>
+271        </receiver>
+272        <receiver
+272-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:122:9-131:20
+273            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+273-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:123:13-99
+274            android:directBootAware="false"
+274-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:124:13-44
+275            android:enabled="@bool/enable_system_alarm_service_default"
+275-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:125:13-72
+276            android:exported="false" >
+276-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:126:13-37
+277            <intent-filter>
+277-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:128:13-130:29
+278                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+278-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:17-98
+278-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:25-95
+279            </intent-filter>
+280        </receiver>
+281        <receiver
+281-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:132:9-142:20
+282            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+282-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:133:13-78
+283            android:directBootAware="false"
+283-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:134:13-44
+284            android:enabled="true"
+284-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:135:13-35
+285            android:exported="true"
+285-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:136:13-36
+286            android:permission="android.permission.DUMP" >
+286-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:137:13-57
+287            <intent-filter>
+287-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:139:13-141:29
+288                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+288-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:17-88
+288-->[androidx.work:work-runtime:2.9.0] /home/hfh/.gradle/caches/transforms-3/8d07263271ff538bb9bce4567d4e2301/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:25-85
+289            </intent-filter>
+290        </receiver>
+291
+292        <uses-library
+292-->[androidx.window:window:1.0.0] /home/hfh/.gradle/caches/transforms-3/58e31bd33eefb0f500e5e74293948046/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+293            android:name="androidx.window.extensions"
+293-->[androidx.window:window:1.0.0] /home/hfh/.gradle/caches/transforms-3/58e31bd33eefb0f500e5e74293948046/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+294            android:required="false" />
+294-->[androidx.window:window:1.0.0] /home/hfh/.gradle/caches/transforms-3/58e31bd33eefb0f500e5e74293948046/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+295        <uses-library
+295-->[androidx.window:window:1.0.0] /home/hfh/.gradle/caches/transforms-3/58e31bd33eefb0f500e5e74293948046/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+296            android:name="androidx.window.sidecar"
+296-->[androidx.window:window:1.0.0] /home/hfh/.gradle/caches/transforms-3/58e31bd33eefb0f500e5e74293948046/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+297            android:required="false" />
+297-->[androidx.window:window:1.0.0] /home/hfh/.gradle/caches/transforms-3/58e31bd33eefb0f500e5e74293948046/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+298
+299        <service
+299-->[androidx.room:room-runtime:2.6.1] /home/hfh/.gradle/caches/transforms-3/acba62778284e04d4510ecb6de76debb/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+300            android:name="androidx.room.MultiInstanceInvalidationService"
+300-->[androidx.room:room-runtime:2.6.1] /home/hfh/.gradle/caches/transforms-3/acba62778284e04d4510ecb6de76debb/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+301            android:directBootAware="true"
+301-->[androidx.room:room-runtime:2.6.1] /home/hfh/.gradle/caches/transforms-3/acba62778284e04d4510ecb6de76debb/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+302            android:exported="false" />
+302-->[androidx.room:room-runtime:2.6.1] /home/hfh/.gradle/caches/transforms-3/acba62778284e04d4510ecb6de76debb/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+303
+304        <receiver
+304-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+305            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+305-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+306            android:directBootAware="false"
+306-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+307            android:enabled="true"
+307-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+308            android:exported="true"
+308-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+309            android:permission="android.permission.DUMP" >
+309-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+310            <intent-filter>
+310-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+311                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+311-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+311-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+312            </intent-filter>
+313            <intent-filter>
+313-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+314                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+314-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+314-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+315            </intent-filter>
+316            <intent-filter>
+316-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+317                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+317-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+317-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+318            </intent-filter>
+319            <intent-filter>
+319-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+320                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+320-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+320-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/hfh/.gradle/caches/transforms-3/a2ddabf2fa3ce519a581a98c42be216f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+321            </intent-filter>
+322        </receiver>
+323    </application>
+324
+325</manifest>

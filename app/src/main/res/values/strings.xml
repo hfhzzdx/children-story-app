@@ -23,6 +23,7 @@
     <string name="skip">跳过</string>
     <string name="btn_continue">继续</string>
     <!-- 按钮 -->
+    <string name="play">播放</string>
     <string name="btn_play">播放</string>
     <string name="btn_pause">暂停</string>
     <string name="btn_stop">停止</string>
@@ -36,6 +37,11 @@
     <string name="btn_about">关于</string>
     <string name="btn_help">帮助</string>
     <string name="btn_exit">退出</string>
+    
+    <!-- 底部导航 -->
+    <string name="home_title">首页</string>
+    <string name="library_title">故事库</string>
+    <string name="import_title">导入</string>
     
     <!-- 故事相关 -->
     <string name="story_cover">故事封面</string>

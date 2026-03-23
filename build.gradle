@@ -15,6 +15,23 @@ plugins {
     id 'com.google.devtools.ksp' version '1.9.24-1.0.20' apply false
 }
 
+// 全局配置，解决Support库和AndroidX冲突
+allprojects {
+    configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support') {
+                if (details.requested.name.contains('support-compat')) {
+                    details.useTarget 'androidx.core:core:1.13.1'
+                    details.because 'Migrate to AndroidX'
+                } else if (details.requested.name.contains('support-media-compat')) {
+                    details.useTarget 'androidx.media:media:1.6.0'
+                    details.because 'Migrate to AndroidX'
+                }
+            }
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
