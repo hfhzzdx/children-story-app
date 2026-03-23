@@ -4,7 +4,7 @@
             "outputFile": "com.dunzi.storyhouse.app-mergeDebugResources-93:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/hfh/.gradle/caches/transforms-3/373e0e0ffec4e74a981e250cff25fd9e/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/home/hfh/.gradle/caches/transforms-3/7e853bc4f0aead45fcb32c62b4721fd8/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

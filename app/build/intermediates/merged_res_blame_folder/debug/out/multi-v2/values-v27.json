@@ -4,7 +4,7 @@
             "outputFile": "com.dunzi.storyhouse.app-mergeDebugResources-93:/values-v27/values-v27.xml",
             "map": [
                 {
-                    "source": "/home/hfh/.gradle/caches/transforms-3/67f99f60e21de4174911915c6f76665d/transformed/core-splashscreen-1.0.1/res/values-v27/values-v27.xml",
+                    "source": "/home/hfh/.gradle/caches/transforms-3/a8900cd9e5dbe5ace2b5f7ce7940f887/transformed/core-splashscreen-1.0.1/res/values-v27/values-v27.xml",
                     "from": {
                         "startLines": "2,3,4,7",
                         "startColumns": "4,4,4,4",

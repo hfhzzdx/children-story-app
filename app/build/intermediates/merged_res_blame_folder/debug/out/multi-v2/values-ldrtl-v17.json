@@ -4,7 +4,7 @@
             "outputFile": "com.dunzi.storyhouse.app-mergeDebugResources-93:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "/home/hfh/.gradle/caches/transforms-3/4fe25ff7d46cf6ad2f8d717a38718650/transformed/material-1.12.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "source": "/home/hfh/.gradle/caches/transforms-3/7fe7da03e45e8976d604056d801e7c12/transformed/material-1.12.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

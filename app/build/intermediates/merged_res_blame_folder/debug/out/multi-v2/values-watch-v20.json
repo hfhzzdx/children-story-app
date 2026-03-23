@@ -4,7 +4,7 @@
             "outputFile": "com.dunzi.storyhouse.app-mergeDebugResources-93:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/hfh/.gradle/caches/transforms-3/67f99f60e21de4174911915c6f76665d/transformed/core-splashscreen-1.0.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/home/hfh/.gradle/caches/transforms-3/a8900cd9e5dbe5ace2b5f7ce7940f887/transformed/core-splashscreen-1.0.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/hfh/.gradle/caches/transforms-3/373e0e0ffec4e74a981e250cff25fd9e/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/home/hfh/.gradle/caches/transforms-3/7e853bc4f0aead45fcb32c62b4721fd8/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
