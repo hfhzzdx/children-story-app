@@ -52,6 +52,14 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+
+
+
+// 导入缺失的依赖
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.graphics.Color
+
 /**
  * 播放历史界面
  */
@@ -562,7 +570,3 @@ private fun formatDate(date: Date): String {
     return formatter.format(date)
 }
 
-// 导入缺失的依赖
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.width
-import androidx.compose.ui.graphics.Color

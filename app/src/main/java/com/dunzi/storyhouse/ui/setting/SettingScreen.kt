@@ -70,6 +70,11 @@ import com.dunzi.storyhouse.R
 import com.dunzi.storyhouse.ui.theme.SettingDescriptionStyle
 import com.dunzi.storyhouse.ui.theme.SettingTitleStyle
 
+
+// 导入缺失的Compose函数
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.draw.rotate
+
 /**
  * 设置界面
  */
@@ -1219,6 +1224,3 @@ fun SettingSwitchItem(
     }
 }
 
-// 导入缺失的Compose函数
-import androidx.compose.foundation.clickable
-import androidx.compose.ui.draw.rotate
