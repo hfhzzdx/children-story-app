@@ -159,7 +159,7 @@
     <string name="filter_level_strict">严格过滤</string>
     
     <!-- 家长控制 -->
-    <string name="parental_control_enabled">启用家长控制</string>
+    <string name="parental_control_switch">启用家长控制</string>
     <string name="parental_purchase_lock">购买锁定</string>
     <string name="parental_data_collection">数据收集</string>
     <string name="parental_analytics">分析数据</string>
@@ -172,7 +172,7 @@
     
     <!-- 存储 -->
     <string name="storage_auto_download">自动下载收藏</string>
-    <string name="storage_location">存储位置</string>
+    <string name="storage_location_label">存储位置</string>
     <string name="storage_cache_limit">缓存大小限制</string>
     <string name="storage_auto_clear">自动清理缓存</string>
     <string name="storage_internal">内部存储</string>
@@ -335,7 +335,7 @@
     <string name="content_filter_title">内容过滤</string>
     <string name="filter_level">过滤级别</string>
     <string name="filter_level_strict_strict">严格</string>
-    <string name="filter_level_moderate">中等</string>
+    <string name="filter_level_moderate_setting">中等</string>
     <string name="filter_level_lenient">宽松</string>
     <string name="age_restriction">年龄限制</string>
     <string name="age_restriction_desc">根据年龄过滤内容</string>
