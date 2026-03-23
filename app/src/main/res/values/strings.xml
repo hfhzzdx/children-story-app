@@ -334,7 +334,7 @@
     <string name="animation_enabled_desc">启用界面动画效果</string>
     <string name="content_filter_title">内容过滤</string>
     <string name="filter_level">过滤级别</string>
-    <string name="filter_level_strict">严格</string>
+    <string name="filter_level_strict_strict">严格</string>
     <string name="filter_level_moderate">中等</string>
     <string name="filter_level_lenient">宽松</string>
     <string name="age_restriction">年龄限制</string>
