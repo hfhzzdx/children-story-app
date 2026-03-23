@@ -162,30 +162,15 @@ interface PlayHistoryDao {
     """)
     suspend fun getDeviceUsage(userId: String): List<DeviceUsageStats>
     
-    // 复杂查询 - 连续播放天数
+    // 查询 - 最近7天内播放的天数
+    // 这是一个简化版本，不计算连续天数，而是返回最近7天内的播放天数
     @Query("""
-        WITH dates AS (
-            SELECT DISTINCT date(playedAt/1000, 'unixepoch') as playDate
-            FROM play_history 
-            WHERE userId = :userId
-            ORDER BY playDate DESC
-        ),
-        grouped AS (
-            SELECT 
-                playDate,
-                julianday(playDate) - julianday(LAG(playDate) OVER (ORDER BY playDate DESC)) as dayDiff
-            FROM dates
-        )
-        SELECT MAX(consecutiveDays) as maxConsecutiveDays
-        FROM (
-            SELECT 
-                COUNT(*) as consecutiveDays
-            FROM grouped
-            WHERE dayDiff = 1 OR dayDiff IS NULL
-            GROUP BY (julianday(playDate) - ROW_NUMBER() OVER (ORDER BY playDate))
-        )
+        SELECT COUNT(DISTINCT date(playedAt/1000, 'unixepoch')) as recentPlayDays
+        FROM play_history 
+        WHERE userId = :userId 
+        AND playedAt >= (strftime('%s', 'now', '-7 days') * 1000)
     """)
-    suspend fun getMaxConsecutiveDays(userId: String): Int?
+    suspend fun getRecentPlayDays(userId: String): Int
     
     // 数据模型用于聚合查询结果
     data class StoryPlayStats(

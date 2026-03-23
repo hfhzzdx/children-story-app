@@ -325,8 +325,8 @@ fun PlayStatsCard(
                 )
                 
                 StatItem(
-                    title = "连续播放",
-                    value = "${playStats?.consecutiveDays ?: 0}天",
+                    title = "最近播放",
+                    value = "${playStats?.recentPlayDays ?: 0}天",
                     icon = Icons.Default.History
                 )
             }

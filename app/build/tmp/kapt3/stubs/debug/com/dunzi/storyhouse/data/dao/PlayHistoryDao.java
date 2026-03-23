@@ -206,7 +206,7 @@ public abstract interface PlayHistoryDao {
     java.lang.String userId, @org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super java.util.List<com.dunzi.storyhouse.data.dao.PlayHistoryDao.DeviceUsageStats>> $completion);
     
-    @androidx.room.Query(value = "\n        WITH dates AS (\n            SELECT DISTINCT date(playedAt/1000, \'unixepoch\') as playDate\n            FROM play_history \n            WHERE userId = :userId\n            ORDER BY playDate DESC\n        ),\n        grouped AS (\n            SELECT \n                playDate,\n                julianday(playDate) - julianday(LAG(playDate) OVER (ORDER BY playDate DESC)) as dayDiff\n            FROM dates\n        )\n        SELECT MAX(consecutiveDays) as maxConsecutiveDays\n        FROM (\n            SELECT \n                COUNT(*) as consecutiveDays\n            FROM grouped\n            WHERE dayDiff = 1 OR dayDiff IS NULL\n            GROUP BY (julianday(playDate) - ROW_NUMBER() OVER (ORDER BY playDate))\n        )\n    ")
+    @androidx.room.Query(value = "\n        SELECT COUNT(DISTINCT date(playedAt/1000, \'unixepoch\')) as playDays\n        FROM play_history \n        WHERE userId = :userId \n        AND playedAt >= (strftime(\'%s\', \'now\', \'-30 days\') * 1000)\n    ")
     @org.jetbrains.annotations.Nullable()
     public abstract java.lang.Object getMaxConsecutiveDays(@org.jetbrains.annotations.NotNull()
     java.lang.String userId, @org.jetbrains.annotations.NotNull()

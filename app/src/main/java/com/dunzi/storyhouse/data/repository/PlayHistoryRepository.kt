@@ -124,9 +124,9 @@ class PlayHistoryRepository @Inject constructor(
         List<PlayHistoryDao.DeviceUsageStats> = 
         playHistoryDao.getDeviceUsage(userId)
     
-    // 获取连续播放天数
-    suspend fun getMaxConsecutiveDays(userId: String): Int = 
-        playHistoryDao.getMaxConsecutiveDays(userId) ?: 0
+    // 获取最近7天内播放的天数
+    suspend fun getRecentPlayDays(userId: String): Int = 
+        playHistoryDao.getRecentPlayDays(userId)
     
     // 按时间段获取播放记录
     suspend fun getPlayHistoryByDateRange(startDate: Date, endDate: Date): List<PlayHistory> = 
@@ -199,7 +199,7 @@ class PlayHistoryRepository @Inject constructor(
         val thisMonthDuration = getThisMonthPlayDuration(userId)
         val playCount = getUserPlayHistoryCount(userId)
         val completedCount = getUserCompletedPlayHistoryCount(userId)
-        val consecutiveDays = getMaxConsecutiveDays(userId)
+        val recentPlayDays = getRecentPlayDays(userId)
         
         return PlayStatsSummary(
             totalDuration = totalDuration,
@@ -208,7 +208,7 @@ class PlayHistoryRepository @Inject constructor(
             thisMonthDuration = thisMonthDuration,
             playCount = playCount,
             completedCount = completedCount,
-            consecutiveDays = consecutiveDays
+            recentPlayDays = recentPlayDays
         )
     }
     
@@ -219,7 +219,7 @@ class PlayHistoryRepository @Inject constructor(
         val thisMonthDuration: Long,
         val playCount: Int,
         val completedCount: Int,
-        val consecutiveDays: Int
+        val recentPlayDays: Int
     ) {
         fun getTotalDurationString(): String {
             val hours = totalDuration / 3600000
