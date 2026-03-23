@@ -327,6 +327,16 @@ class PlayerViewModel @Inject constructor(
     
     /**
      * 设置播放列表
+     */
+    fun setPlaylist(playlist: List<Story>) {
+        _playlist.value = playlist
+    }
+    
+    /**
+     * 更新播放模式
+     */
+    fun updatePlayMode() {
+        viewModelScope.launch {
             userSettingsRepository.updatePlayMode(
                 shuffle = _playerState.value.shuffleEnabled
             )
