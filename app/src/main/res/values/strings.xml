@@ -292,7 +292,7 @@
     <!-- 其他 -->
     <string name="unknown">未知</string>
     <string name="not_set">未设置</string>
-    <string name="default">默认</string>
+    <string name="default_text">默认</string>
     <string name="custom">自定义</string>
     <string name="enabled">已启用</string>
     <string name="disabled">已禁用</string>
