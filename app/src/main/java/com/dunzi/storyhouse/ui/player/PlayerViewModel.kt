@@ -525,4 +525,4 @@ class PlayerViewModel @Inject constructor(
         REPEAT_ALL,
         REPEAT_ONE
     }
-}
+}}
