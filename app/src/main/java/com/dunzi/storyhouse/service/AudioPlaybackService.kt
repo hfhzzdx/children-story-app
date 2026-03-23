@@ -177,9 +177,13 @@ class AudioPlaybackService : Service() {
     /**
      * 初始化播放器
      */
+
+
     private fun initializePlayer() {
         player = ExoPlayer.Builder(this).build().apply {
             addListener(object : Player.Listener {
+                // 重写 Player.Listener 中的方法
+                override fun onPlaybackStateChanged(playbackState: Int) {
                     when (playbackState) {
                         Player.STATE_READY -> {
                             // 播放器准备就绪
@@ -205,7 +209,15 @@ class AudioPlaybackService : Service() {
             })
         }
     }
-    
+            // 您可能还需要重写其他方法
+            // override fun onIsPlayingChanged(isPlaying: Boolean) { ... }
+        })
+    }
+}
+   
+
+
+
     /**
      * 处理意图
      */

@@ -137,11 +137,6 @@ class StoryDetailActivity : ComponentActivity() {
     }
 }
 
-/**
- * 故事详情视图模型
- */
-@AndroidEntryPoint
-    
     Scaffold(
         topBar = {
             StoryDetailTopBar(

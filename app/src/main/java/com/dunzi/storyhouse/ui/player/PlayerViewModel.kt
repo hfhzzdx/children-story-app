@@ -154,12 +154,6 @@ class PlayerViewModel @Inject constructor(
     }
     
     /**
-     * 调整播放速度
-     */
-        }
-    }
-    
-    /**
      * 切换循环模式
      */
     fun toggleRepeatMode() {
