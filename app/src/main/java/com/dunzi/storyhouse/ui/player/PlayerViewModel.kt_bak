@@ -176,7 +176,7 @@ class PlayerViewModel @Inject constructor(
                 RepeatMode.REPEAT_ONE -> "repeat_one"
             }
             userSettingsRepository.updatePlayMode(playMode)
-        } // 修复：补全了此前缺失的协程代码块结束括号
+        }
     }
     
     /**
@@ -261,6 +261,17 @@ class PlayerViewModel @Inject constructor(
     }
     
     /**
+     * 跳转到指定位置
+     */
+    fun seekTo(position: Long) {
+        _playerState.update { state ->
+            state.copy(currentPosition = position)
+        }
+        
+        // TODO: 实现跳转逻辑
+    }
+    
+    /**
      * 更新播放进度
      */
     fun updateProgress(position: Long, duration: Long) {
@@ -332,8 +343,29 @@ class PlayerViewModel @Inject constructor(
         }
     }
     
-    // 修复：移除了第二个重复的 `toggleRepeatMode` 方法
-    
+    /**
+     * 切换循环模式
+     */
+    fun toggleRepeatMode() {
+        val currentMode = _playerState.value.repeatMode
+        val nextMode = when (currentMode) {
+            RepeatMode.NONE -> RepeatMode.REPEAT_ALL
+            RepeatMode.REPEAT_ALL -> RepeatMode.REPEAT_ONE
+            RepeatMode.REPEAT_ONE -> RepeatMode.NONE
+        }
+        
+        _playerState.update { state ->
+            state.copy(repeatMode = nextMode)
+        }
+        
+        // 更新用户设置
+        viewModelScope.launch {
+            val modeString = when (nextMode) {
+                RepeatMode.NONE -> "normal"
+                RepeatMode.REPEAT_ALL -> "repeat_all"
+                RepeatMode.REPEAT_ONE -> "repeat_one"
+            }
+            userSettingsRepository.updatePlayMode(mode = modeString)
     /**
      * 调整播放速度
      */
@@ -376,9 +408,6 @@ class PlayerViewModel @Inject constructor(
             _playerState.update { state ->
                 state.copy(playStats = stats)
             }
-        } // 修复：补全了此前缺失的协程代码块结束括号
-    }
-    
     data class PlayerState(
         val currentStory: com.dunzi.storyhouse.data.model.Story? = null,
         val isPlaying: Boolean = false,
@@ -496,4 +525,4 @@ class PlayerViewModel @Inject constructor(
         REPEAT_ALL,
         REPEAT_ONE
     }
-} // 修复：补全了类定义的结束括号
+}}
