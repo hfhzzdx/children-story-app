@@ -21,8 +21,7 @@
     <string name="next">下一步</string>
     <string name="finish">完成</string>
     <string name="skip">跳过</string>
-    <string name="continue">继续</string>
-    
+    <string name="btn_continue">继续</string>
     <!-- 按钮 -->
     <string name="btn_play">播放</string>
     <string name="btn_pause">暂停</string>
