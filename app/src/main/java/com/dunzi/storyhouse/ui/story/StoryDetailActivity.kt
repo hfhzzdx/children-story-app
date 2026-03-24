@@ -1,3 +1,11 @@
+package com.dunzi.storyhouse.ui.story
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.viewModels
+import com.dunzi.storyhouse.ui.theme.ChildrenStoryAppTheme
+
 class StoryDetailActivity : ComponentActivity() {
     
     companion object {

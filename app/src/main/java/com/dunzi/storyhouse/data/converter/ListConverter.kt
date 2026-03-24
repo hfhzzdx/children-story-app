@@ -18,7 +18,8 @@ class ListConverter {
             emptyList()
         } else {
             try {
-                gson.fromJson<List<String>>(value, type)
+                @Suppress("UNCHECKED_CAST")
+                gson.fromJson<List<String>>(value, type) as List<String>
             } catch (e: Exception) {
                 emptyList()
             }

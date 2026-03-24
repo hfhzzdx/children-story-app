@@ -18,7 +18,8 @@ class MapConverter {
             emptyMap()
         } else {
             try {
-                gson.fromJson<Map<String, String>>(value, type)
+                @Suppress("UNCHECKED_CAST")
+                gson.fromJson<Map<String, String>>(value, type) as Map<String, String>
             } catch (e: Exception) {
                 emptyMap()
             }

@@ -1,201 +1,108 @@
 package com.dunzi.storyhouse.ui.component
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.LibraryBooks
 import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.Nature
 import androidx.compose.material.icons.filled.Pets
-import androidx.compose.material.icons.filled.Science
-import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Nature
+import androidx.compose.material.icons.outlined.Science
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.dunzi.storyhouse.R
-import com.dunzi.storyhouse.ui.theme.CategoryCardBackground
-import com.dunzi.storyhouse.ui.theme.CategoryCardTextStyle
+import com.dunzi.storyhouse.ui.theme.ChildrenStoryAppTheme
 
 /**
- * 分类网格组件
+ * 首页分类网格
  */
 @Composable
 fun CategoryGrid(
-    categories: List<CategoryItem>,
+    modifier: Modifier = Modifier,
     onCategoryClick: (String) -> Unit,
-    modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
-        // 标题
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "分类",
-                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                color = MaterialTheme.colorScheme.onSurface
-            )
-            
-            Text(
-                text = "查看全部",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.clickable { /* TODO: 查看全部分类 */ }
-            )
-        }
-        
-        Spacer(modifier = Modifier.height(12.dp))
-        
-        // 分类网格
-        LazyRow(
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            items(categories) { category ->
-                CategoryCard(
-                    category = category,
-                    onClick = { onCategoryClick(category.id) }
-                )
+    val categories = remember {
+        listOf(
+            CategoryItem("历史", Icons.Filled.History, Color(0xFFE3F2FD)),
+            CategoryItem("图书", Icons.Filled.LibraryBooks, Color(0xFFFCE4EC)),
+            CategoryItem("音乐", Icons.Filled.MusicNote, Color(0xFFE8F5E9)),
+            CategoryItem("自然", Icons.Outlined.Nature, Color(0xFFFFF3E0)),
+            CategoryItem("宠物", Icons.Filled.Pets, Color(0xFFEDE7F6)),
+            CategoryItem("科学", Icons.Outlined.Science, Color(0xFFE0F7FA)),
+            CategoryItem("收藏", Icons.Filled.Favorite, Color(0xFFFFEBEE)),
+        )
+    }
+
+    LazyVerticalGrid(
+        columns = GridCells.Adaptive(120.dp),
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        items(categories) { item ->
+            CategoryCard(item = item) {
+                onCategoryClick(item.label)
             }
         }
     }
 }
 
-/**
- * 分类卡片
- */
 @Composable
-fun CategoryCard(
-    category: CategoryItem,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
+private fun CategoryCard(
+    item: CategoryItem,
+    onClick: () -> Unit
 ) {
-    Column(
-        modifier = modifier
-            .width(80.dp)
-            .clickable(onClick = onClick),
-        horizontalAlignment = Alignment.CenterHorizontally
+    Card(
+        colors = CardDefaults.cardColors(containerColor = item.bgColor),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+            .clickable { onClick() }
     ) {
-        // 图标
-        Box(
+        Row(
             modifier = Modifier
-                .size(64.dp)
-                .clip(CircleShape)
-                .background(CategoryCardBackground),
-            contentAlignment = Alignment.Center
+                .fillMaxSize()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Icon(
-                imageVector = category.icon,
-                contentDescription = category.name,
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(28.dp)
+                imageVector = item.icon,
+                contentDescription = item.label,
+                tint = MaterialTheme.colorScheme.primary
             )
+            Text(text = item.label, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
         }
-        
-        Spacer(modifier = Modifier.height(8.dp))
-        
-        // 名称
-        Text(
-            text = category.name,
-            style = CategoryCardTextStyle,
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Medium,
-            maxLines = 1,
-            textAlign = androidx.compose.ui.text.style.TextAlign.Center
-        )
     }
 }
 
-/**
- * 分类项数据类
- */
 data class CategoryItem(
-    val id: String,
-    val name: String,
-    val icon: ImageVector,
-    val color: Color
+    val label: String,
+    val icon: androidx.compose.ui.graphics.vector.ImageVector,
+    val bgColor: Color
 )
 
-/**
- * 获取默认分类列表
- */
-fun getDefaultCategories(): List<CategoryItem> {
-    return listOf(
-        CategoryItem(
-            id = "favorite",
-            name = "收藏",
-            icon = Icons.Default.Favorite,
-            color = MaterialTheme.colorScheme.primary
-        ),
-        CategoryItem(
-            id = "recent",
-            name = "最近播放",
-            icon = Icons.Default.History,
-            color = MaterialTheme.colorScheme.secondary
-        ),
-        CategoryItem(
-            id = "fairy_tale",
-            name = "童话故事",
-            icon = Icons.Default.Star,
-            color = MaterialTheme.colorScheme.tertiary
-        ),
-        CategoryItem(
-            id = "animal",
-            name = "动物世界",
-            icon = Icons.Default.Pets,
-            color = MaterialTheme.colorScheme.primary
-        ),
-        CategoryItem(
-            id = "nature",
-            name = "自然科普",
-            icon = Icons.Default.Nature,
-            color = MaterialTheme.colorScheme.secondary
-        ),
-        CategoryItem(
-            id = "science",
-            name = "科学探索",
-            icon = Icons.Default.Science,
-            color = MaterialTheme.colorScheme.tertiary
-        ),
-        CategoryItem(
-            id = "music",
-            name = "音乐故事",
-            icon = Icons.Default.MusicNote,
-            color = MaterialTheme.colorScheme.primary
-        ),
-        CategoryItem(
-            id = "classic",
-            name = "经典名著",
-            icon = Icons.Default.LibraryBooks,
-            color = MaterialTheme.colorScheme.secondary
-        )
-    )
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO, showBackground = true)
+@Composable
+private fun CategoryGridPreview() {
+    ChildrenStoryAppTheme {
+        CategoryGrid(onCategoryClick = {})
+    }
 }
