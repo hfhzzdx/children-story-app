@@ -186,7 +186,7 @@ interface UserSettingsDao {
     @Query("SELECT dailyLimitEnabled FROM user_settings WHERE userId = :userId")
     suspend fun isDailyLimitEnabled(userId: String): Boolean?
     
-    // 获取今日剩余播放时间（修复: 使用 play_history 表的正确列名 playDuration 与 playedAt）
-    @Query("SELECT dailyLimitDuration - COALESCE((SELECT SUM(playDuration) FROM play_history WHERE userId = :userId AND date(playedAt/1000, 'unixepoch') = date('now')), 0) as remainingTime FROM user_settings WHERE userId = :userId AND dailyLimitEnabled = 1")
+    // 获取今日剩余播放时间（修复: 使用 play_history 表的正确列名 playDuration 与 timestamp；去除对 play_history.userId 的依赖以匹配当前表结构）
+    @Query("SELECT dailyLimitDuration - COALESCE((SELECT SUM(playDuration) FROM play_history WHERE date(timestamp/1000, 'unixepoch') = date('now')), 0) as remainingTime FROM user_settings WHERE userId = :userId AND dailyLimitEnabled = 1")
     suspend fun getRemainingPlayTimeToday(userId: String): Long?
 }
