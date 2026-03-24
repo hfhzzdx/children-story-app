@@ -18,6 +18,9 @@ import com.dunzi.storyhouse.ui.MainActivity
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -40,6 +43,12 @@ class AudioPlaybackService : Service() {
     // 播放列表相关
     private var playlist: List<com.dunzi.storyhouse.data.model.Story> = emptyList()
     private var currentPlaylistIndex: Int = -1
+    
+    // Coroutine scope
+    private val viewModelScope = CoroutineScope(Dispatchers.Main)
+    
+    // 播放设置
+    private var autoPlayNext: Boolean = true
     
     // 播放进度相关
     private var playbackProgressHandler: Handler? = null
@@ -264,6 +273,18 @@ class AudioPlaybackService : Service() {
     }
     
     /**
+     * 播放故事
+     */
+    private fun playStory(storyId: Long) {
+        viewModelScope.launch {
+            val story = storyRepository.getStoryById(storyId)
+            if (story != null) {
+                playAudio(storyId, story.audioPath, story.title, story.author)
+            }
+        }
+    }
+    
+    /**
      * 播放音频
      */
     private fun playAudio(storyId: Long, audioUrl: String, title: String, author: String) {
@@ -423,7 +444,9 @@ class AudioPlaybackService : Service() {
     private fun onPlaybackCompleted() {
         // 标记故事为已完成
         if (currentStoryId != -1L) {
-            storyRepository.markAsCompleted(currentStoryId)
+            viewModelScope.launch {
+                storyRepository.markAsCompleted(currentStoryId)
+            }
         }
         
         // 自动播放下一首（如果启用）
@@ -442,13 +465,12 @@ class AudioPlaybackService : Service() {
         // 在后台线程记录播放历史
         Thread {
             try {
-                playHistoryRepository.recordPlay(
-                    storyId = storyId,
-                    userId = "default",
-                    duration = player.duration,
-                    playedAt = System.currentTimeMillis(),
-                    completed = false,
-                    deviceName = Build.MODEL
+                // 使用runBlocking在后台线程中调用suspend函数
+                kotlinx.coroutines.runBlocking {
+                    playHistoryRepository.createPlaySession(
+                        storyId = storyId,
+                        userId = "default",
+                        deviceName = Build.MODEL
                 )
             } catch (e: Exception) {
                 // 记录失败，但不影响播放
@@ -608,7 +630,10 @@ class AudioPlaybackService : Service() {
                 // 在后台线程更新进度
                 Thread {
                     try {
-                        storyRepository.updatePlayProgress(currentStoryId, currentPosition, progress)
+                        // 使用runBlocking在后台线程中调用suspend函数
+                        kotlinx.coroutines.runBlocking {
+                            storyRepository.updatePlayProgress(currentStoryId, currentPosition, progress)
+                        }
                     } catch (e: Exception) {
                         // 忽略更新错误
                     }

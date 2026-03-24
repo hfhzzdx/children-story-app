@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.LibraryBooks
@@ -25,12 +26,6 @@ import androidx.compose.material.icons.filled.Nature
 import androidx.compose.material.icons.filled.Pets
 import androidx.compose.material.icons.filled.Science
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.outlined.History as HistoryOutlined
-import androidx.compose.material.icons.outlined.LibraryBooks as LibraryBooksOutlined
-import androidx.compose.material.icons.outlined.MusicNote as MusicNoteOutlined
-import androidx.compose.material.icons.outlined.Nature as NatureOutlined
-import androidx.compose.material.icons.outlined.Pets as PetsOutlined
-import androidx.compose.material.icons.outlined.Science as ScienceOutlined
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -65,13 +60,13 @@ fun CategoryGrid(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = stringResource(R.string.category_title),
+                text = "分类",
                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                 color = MaterialTheme.colorScheme.onSurface
             )
             
             Text(
-                text = stringResource(R.string.view_all),
+                text = "查看全部",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.clickable { /* TODO: 查看全部分类 */ }

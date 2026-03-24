@@ -32,6 +32,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.fillMaxWidth
 import com.github.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.github.bumptech.glide.integration.compose.GlideImage
 import com.dunzi.storyhouse.R

@@ -11,9 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.dunzi.storyhouse.ui.history.PlayHistoryActivity
+import com.dunzi.storyhouse.ui.screen.MainScreen
 import com.dunzi.storyhouse.ui.setting.SettingActivity
 import com.dunzi.storyhouse.ui.story.StoryDetailActivity
 import com.dunzi.storyhouse.ui.theme.ChildrenStoryAppTheme
+import com.dunzi.storyhouse.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -22,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     
-    private val viewModel: com.dunzi.storyhouse.ui.screen.MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
     
     override fun onCreate(savedInstanceState: Bundle?) {
         // 安装启动屏
