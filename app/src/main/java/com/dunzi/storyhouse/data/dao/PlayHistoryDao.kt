@@ -19,5 +19,5 @@ interface PlayHistoryDao {
     @Query(
         "SELECT COALESCE(SUM(playDuration),0) as totalTime, COALESCE(COUNT(*),0) as totalCount FROM play_history WHERE storyId = :storyId"
     )
-    fun observeStats(storyId: Long): Flow<Pair<Long, Long>?>
+    fun observeStats(storyId: Long): Flow<Pair<Long, Long>>
 }
