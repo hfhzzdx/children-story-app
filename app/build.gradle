@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -94,11 +95,20 @@ dependencies {
 
     // AndroidX core
     implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    // Timber logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 
     // Material Components (Views + XML styles/attrs)
     implementation 'com.google.android.material:material:1.12.0'
     // AppCompat (Toolbar/overlays/progressbar styles)
     implementation 'androidx.appcompat:appcompat:1.7.0'
+
+    // Hilt DI
+    implementation "com.google.dagger:hilt-android:${hilt_version}"
+    kapt "com.google.dagger:hilt-compiler:${hilt_version}"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.2.0'
 
     // Debug/preview
     debugImplementation 'androidx.compose.ui:ui-tooling'
