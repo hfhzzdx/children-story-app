@@ -21,6 +21,7 @@ import com.google.android.exoplayer2.Player
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.firstOrNull
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -277,7 +278,7 @@ class AudioPlaybackService : Service() {
      */
     private fun playStory(storyId: Long) {
         viewModelScope.launch {
-            val story = storyRepository.getStoryById(storyId)
+            val story = storyRepository.getStoryById(storyId).firstOrNull()
             if (story != null) {
                 playAudio(storyId, story.audioPath, story.title, story.author)
             }
@@ -471,7 +472,8 @@ class AudioPlaybackService : Service() {
                         storyId = storyId,
                         userId = "default",
                         deviceName = Build.MODEL
-                )
+                    )
+                }
             } catch (e: Exception) {
                 // 记录失败，但不影响播放
                 e.printStackTrace()
@@ -566,7 +568,9 @@ class AudioPlaybackService : Service() {
      */
     private fun updateNotification() {
         // 获取当前播放的故事信息
-        val story = storyRepository.getStoryById(currentStoryId)
+        val story = try {
+            kotlinx.coroutines.runBlocking { storyRepository.getStoryById(currentStoryId).firstOrNull() }
+        } catch (_: Exception) { null }
         val title = story?.title ?: getString(R.string.unknown)
         val author = story?.author ?: ""
         
