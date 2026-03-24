@@ -39,10 +39,19 @@ android {
         }
     }
 
-    // Let Compose BOM control versions; omit compiler extension to avoid mismatch
+    // Align Java/Kotlin to 17 to satisfy CI toolchain
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
     kotlinOptions {
         jvmTarget = '17'
     }
+}
+
+// Use Kotlin JVM toolchain to avoid Gradle/Javac mismatch in CI
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
