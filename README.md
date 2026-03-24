@@ -196,7 +196,7 @@ Story (1) ── (N) PlayHistory (N) ── (1) UserSettings
 
 ## 联系方式
 
-- **项目负责人**: 霍风浩
+- **项目负责人**: hfhzzdx
 - **邮箱**: [待添加]
 - **GitHub**: [待添加]
 

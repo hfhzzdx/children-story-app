@@ -4,12 +4,15 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import com.dunzi.storyhouse.data.database.StoryDatabase
 import com.dunzi.storyhouse.data.repository.PlayHistoryRepository
 import com.dunzi.storyhouse.data.repository.StoryRepository
 import com.dunzi.storyhouse.data.repository.UserSettingsRepository
 import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 /**
@@ -115,18 +118,21 @@ class StoryApplication : Application() {
     /**
      * 清理应用数据
      */
-    fun clearAppData() {
-        // 清理数据库
-        StoryDatabase.getInstance(this).clearAll()
-        
-        // 清理SharedPreferences
-        getSharedPreferences("story_app_prefs", Context.MODE_PRIVATE).edit().clear().apply()
-        
-        // 清理文件缓存
-        cacheDir.deleteRecursively()
-        externalCacheDir?.deleteRecursively()
-        
-        Timber.d("App data cleared")
+    suspend fun clearAppData() {
+        // 在协程中清理数据库
+        withContext(Dispatchers.IO) {
+            // 清理数据库
+            StoryDatabase.getInstance(this@StoryApplication).clearAllTables()
+            
+            // 清理SharedPreferences
+            getSharedPreferences("story_app_prefs", Context.MODE_PRIVATE).edit().clear().apply()
+            
+            // 清理文件缓存
+            cacheDir.deleteRecursively()
+            externalCacheDir?.deleteRecursively()
+            
+            Timber.d("App data cleared")
+        }
     }
     
     companion object {

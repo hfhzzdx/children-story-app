@@ -32,7 +32,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
+import com.github.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.github.bumptech.glide.integration.compose.GlideImage
 import com.dunzi.storyhouse.R
 import com.dunzi.storyhouse.data.model.Story
 import com.dunzi.storyhouse.ui.theme.FavoriteColor
@@ -75,7 +76,7 @@ fun StoryCard(
                     .fillMaxWidth()
             ) {
                 if (story.coverImage.isNotBlank()) {
-                    AsyncImage(
+                    GlideImage(
                         model = story.coverImage,
                         contentDescription = stringResource(R.string.story_cover),
                         modifier = Modifier.fillMaxSize(),
@@ -229,7 +230,7 @@ fun StoryListItem(
                 contentAlignment = Alignment.Center
             ) {
                 if (story.coverImage.isNotBlank()) {
-                    AsyncImage(
+                    GlideImage(
                         model = story.coverImage,
                         contentDescription = stringResource(R.string.story_cover),
                         modifier = Modifier.fillMaxSize(),

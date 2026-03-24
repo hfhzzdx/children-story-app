@@ -1624,7 +1624,7 @@ public final class PlayHistoryDao_Impl implements PlayHistoryDao {
 
   @Override
   public Object getCompleted(final Continuation<? super List<PlayHistory>> $completion) {
-    final String _sql = "SELECT * FROM play_history WHERE completed = 1 ORDER BY finishedAt DESC";
+    final String _sql = "SELECT `play_history`.`id` AS `id`, `play_history`.`storyId` AS `storyId`, `play_history`.`userId` AS `userId`, `play_history`.`startPosition` AS `startPosition`, `play_history`.`endPosition` AS `endPosition`, `play_history`.`duration` AS `duration`, `play_history`.`completed` AS `completed`, `play_history`.`playbackSpeed` AS `playbackSpeed`, `play_history`.`volume` AS `volume`, `play_history`.`voiceType` AS `voiceType`, `play_history`.`deviceId` AS `deviceId`, `play_history`.`deviceName` AS `deviceName`, `play_history`.`playedAt` AS `playedAt`, `play_history`.`finishedAt` AS `finishedAt`, `play_history`.`interruptions` AS `interruptions`, `play_history`.`skips` AS `skips`, `play_history`.`rewinds` AS `rewinds`, `play_history`.`sessionId` AS `sessionId`, `play_history`.`metadata` AS `metadata` FROM play_history WHERE completed = 1 ORDER BY finishedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
     return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<PlayHistory>>() {
@@ -1633,25 +1633,25 @@ public final class PlayHistoryDao_Impl implements PlayHistoryDao {
       public List<PlayHistory> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfStoryId = CursorUtil.getColumnIndexOrThrow(_cursor, "storyId");
-          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
-          final int _cursorIndexOfStartPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "startPosition");
-          final int _cursorIndexOfEndPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "endPosition");
-          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
-          final int _cursorIndexOfCompleted = CursorUtil.getColumnIndexOrThrow(_cursor, "completed");
-          final int _cursorIndexOfPlaybackSpeed = CursorUtil.getColumnIndexOrThrow(_cursor, "playbackSpeed");
-          final int _cursorIndexOfVolume = CursorUtil.getColumnIndexOrThrow(_cursor, "volume");
-          final int _cursorIndexOfVoiceType = CursorUtil.getColumnIndexOrThrow(_cursor, "voiceType");
-          final int _cursorIndexOfDeviceId = CursorUtil.getColumnIndexOrThrow(_cursor, "deviceId");
-          final int _cursorIndexOfDeviceName = CursorUtil.getColumnIndexOrThrow(_cursor, "deviceName");
-          final int _cursorIndexOfPlayedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "playedAt");
-          final int _cursorIndexOfFinishedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "finishedAt");
-          final int _cursorIndexOfInterruptions = CursorUtil.getColumnIndexOrThrow(_cursor, "interruptions");
-          final int _cursorIndexOfSkips = CursorUtil.getColumnIndexOrThrow(_cursor, "skips");
-          final int _cursorIndexOfRewinds = CursorUtil.getColumnIndexOrThrow(_cursor, "rewinds");
-          final int _cursorIndexOfSessionId = CursorUtil.getColumnIndexOrThrow(_cursor, "sessionId");
-          final int _cursorIndexOfMetadata = CursorUtil.getColumnIndexOrThrow(_cursor, "metadata");
+          final int _cursorIndexOfId = 0;
+          final int _cursorIndexOfStoryId = 1;
+          final int _cursorIndexOfUserId = 2;
+          final int _cursorIndexOfStartPosition = 3;
+          final int _cursorIndexOfEndPosition = 4;
+          final int _cursorIndexOfDuration = 5;
+          final int _cursorIndexOfCompleted = 6;
+          final int _cursorIndexOfPlaybackSpeed = 7;
+          final int _cursorIndexOfVolume = 8;
+          final int _cursorIndexOfVoiceType = 9;
+          final int _cursorIndexOfDeviceId = 10;
+          final int _cursorIndexOfDeviceName = 11;
+          final int _cursorIndexOfPlayedAt = 12;
+          final int _cursorIndexOfFinishedAt = 13;
+          final int _cursorIndexOfInterruptions = 14;
+          final int _cursorIndexOfSkips = 15;
+          final int _cursorIndexOfRewinds = 16;
+          final int _cursorIndexOfSessionId = 17;
+          final int _cursorIndexOfMetadata = 18;
           final List<PlayHistory> _result = new ArrayList<PlayHistory>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final PlayHistory _item;
@@ -1747,7 +1747,7 @@ public final class PlayHistoryDao_Impl implements PlayHistoryDao {
 
   @Override
   public Flow<List<PlayHistory>> getCompletedFlow() {
-    final String _sql = "SELECT * FROM play_history WHERE completed = 1 ORDER BY finishedAt DESC";
+    final String _sql = "SELECT `play_history`.`id` AS `id`, `play_history`.`storyId` AS `storyId`, `play_history`.`userId` AS `userId`, `play_history`.`startPosition` AS `startPosition`, `play_history`.`endPosition` AS `endPosition`, `play_history`.`duration` AS `duration`, `play_history`.`completed` AS `completed`, `play_history`.`playbackSpeed` AS `playbackSpeed`, `play_history`.`volume` AS `volume`, `play_history`.`voiceType` AS `voiceType`, `play_history`.`deviceId` AS `deviceId`, `play_history`.`deviceName` AS `deviceName`, `play_history`.`playedAt` AS `playedAt`, `play_history`.`finishedAt` AS `finishedAt`, `play_history`.`interruptions` AS `interruptions`, `play_history`.`skips` AS `skips`, `play_history`.`rewinds` AS `rewinds`, `play_history`.`sessionId` AS `sessionId`, `play_history`.`metadata` AS `metadata` FROM play_history WHERE completed = 1 ORDER BY finishedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.createFlow(__db, false, new String[] {"play_history"}, new Callable<List<PlayHistory>>() {
       @Override
@@ -1755,25 +1755,25 @@ public final class PlayHistoryDao_Impl implements PlayHistoryDao {
       public List<PlayHistory> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfStoryId = CursorUtil.getColumnIndexOrThrow(_cursor, "storyId");
-          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
-          final int _cursorIndexOfStartPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "startPosition");
-          final int _cursorIndexOfEndPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "endPosition");
-          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
-          final int _cursorIndexOfCompleted = CursorUtil.getColumnIndexOrThrow(_cursor, "completed");
-          final int _cursorIndexOfPlaybackSpeed = CursorUtil.getColumnIndexOrThrow(_cursor, "playbackSpeed");
-          final int _cursorIndexOfVolume = CursorUtil.getColumnIndexOrThrow(_cursor, "volume");
-          final int _cursorIndexOfVoiceType = CursorUtil.getColumnIndexOrThrow(_cursor, "voiceType");
-          final int _cursorIndexOfDeviceId = CursorUtil.getColumnIndexOrThrow(_cursor, "deviceId");
-          final int _cursorIndexOfDeviceName = CursorUtil.getColumnIndexOrThrow(_cursor, "deviceName");
-          final int _cursorIndexOfPlayedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "playedAt");
-          final int _cursorIndexOfFinishedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "finishedAt");
-          final int _cursorIndexOfInterruptions = CursorUtil.getColumnIndexOrThrow(_cursor, "interruptions");
-          final int _cursorIndexOfSkips = CursorUtil.getColumnIndexOrThrow(_cursor, "skips");
-          final int _cursorIndexOfRewinds = CursorUtil.getColumnIndexOrThrow(_cursor, "rewinds");
-          final int _cursorIndexOfSessionId = CursorUtil.getColumnIndexOrThrow(_cursor, "sessionId");
-          final int _cursorIndexOfMetadata = CursorUtil.getColumnIndexOrThrow(_cursor, "metadata");
+          final int _cursorIndexOfId = 0;
+          final int _cursorIndexOfStoryId = 1;
+          final int _cursorIndexOfUserId = 2;
+          final int _cursorIndexOfStartPosition = 3;
+          final int _cursorIndexOfEndPosition = 4;
+          final int _cursorIndexOfDuration = 5;
+          final int _cursorIndexOfCompleted = 6;
+          final int _cursorIndexOfPlaybackSpeed = 7;
+          final int _cursorIndexOfVolume = 8;
+          final int _cursorIndexOfVoiceType = 9;
+          final int _cursorIndexOfDeviceId = 10;
+          final int _cursorIndexOfDeviceName = 11;
+          final int _cursorIndexOfPlayedAt = 12;
+          final int _cursorIndexOfFinishedAt = 13;
+          final int _cursorIndexOfInterruptions = 14;
+          final int _cursorIndexOfSkips = 15;
+          final int _cursorIndexOfRewinds = 16;
+          final int _cursorIndexOfSessionId = 17;
+          final int _cursorIndexOfMetadata = 18;
           final List<PlayHistory> _result = new ArrayList<PlayHistory>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final PlayHistory _item;
@@ -2610,13 +2610,13 @@ public final class PlayHistoryDao_Impl implements PlayHistoryDao {
   }
 
   @Override
-  public Object getMaxConsecutiveDays(final String userId,
+  public Object getRecentPlayDays(final String userId,
       final Continuation<? super Integer> $completion) {
     final String _sql = "\n"
-            + "        SELECT COUNT(DISTINCT date(playedAt/1000, 'unixepoch')) as playDays\n"
+            + "        SELECT COUNT(DISTINCT date(playedAt/1000, 'unixepoch')) as recentPlayDays\n"
             + "        FROM play_history \n"
             + "        WHERE userId = ? \n"
-            + "        AND playedAt >= (strftime('%s', 'now', '-30 days') * 1000)\n"
+            + "        AND playedAt >= (strftime('%s', 'now', '-7 days') * 1000)\n"
             + "    ";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -2628,7 +2628,7 @@ public final class PlayHistoryDao_Impl implements PlayHistoryDao {
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
     return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<Integer>() {
       @Override
-      @Nullable
+      @NonNull
       public Integer call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {

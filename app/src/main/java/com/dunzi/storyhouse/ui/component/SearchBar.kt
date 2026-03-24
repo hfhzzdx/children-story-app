@@ -128,7 +128,7 @@ fun SearchBar(
                 ) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = stringResource(R.string.clear_search),
+                        contentDescription = "清除搜索",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }

@@ -320,8 +320,8 @@ class StoryDetailViewModel @Inject constructor(
         /**
          * 获取故事章节
          */
-        val chapters: List<com.dunzi.storyhouse.data.model.Story.Chapter>
-            get() = story?.chapters ?: emptyList()
+        val chapters: List<com.dunzi.storyhouse.data.model.Chapter>
+            get() = emptyList() // 暂时返回空列表，需要从数据库或API获取
         
         /**
          * 检查是否有章节

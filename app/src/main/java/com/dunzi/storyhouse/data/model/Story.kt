@@ -70,7 +70,7 @@ data class Story(
      */
     fun getAgeRange(): String {
         return if (minAge == maxAge) {
-            "$minAge岁"
+            "${minAge}岁"
         } else {
             "${minAge}-${maxAge}岁"
         }

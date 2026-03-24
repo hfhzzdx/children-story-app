@@ -1054,7 +1054,7 @@ public final class StoryDao_Impl implements StoryDao {
 
   @Override
   public Object getAll(final Continuation<? super List<Story>> $completion) {
-    final String _sql = "SELECT * FROM stories ORDER BY createdAt DESC";
+    final String _sql = "SELECT `stories`.`id` AS `id`, `stories`.`title` AS `title`, `stories`.`author` AS `author`, `stories`.`description` AS `description`, `stories`.`coverImage` AS `coverImage`, `stories`.`category` AS `category`, `stories`.`subCategory` AS `subCategory`, `stories`.`tags` AS `tags`, `stories`.`contentPath` AS `contentPath`, `stories`.`audioPath` AS `audioPath`, `stories`.`duration` AS `duration`, `stories`.`wordCount` AS `wordCount`, `stories`.`minAge` AS `minAge`, `stories`.`maxAge` AS `maxAge`, `stories`.`language` AS `language`, `stories`.`source` AS `source`, `stories`.`format` AS `format`, `stories`.`playCount` AS `playCount`, `stories`.`favoriteCount` AS `favoriteCount`, `stories`.`rating` AS `rating`, `stories`.`createdAt` AS `createdAt`, `stories`.`updatedAt` AS `updatedAt`, `stories`.`lastPlayedAt` AS `lastPlayedAt`, `stories`.`isFavorite` AS `isFavorite`, `stories`.`isDownloaded` AS `isDownloaded`, `stories`.`isCompleted` AS `isCompleted`, `stories`.`isHidden` AS `isHidden`, `stories`.`lastPosition` AS `lastPosition`, `stories`.`progress` AS `progress`, `stories`.`metadata` AS `metadata` FROM stories ORDER BY createdAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
     return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<Story>>() {
@@ -1063,36 +1063,36 @@ public final class StoryDao_Impl implements StoryDao {
       public List<Story> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-          final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfCoverImage = CursorUtil.getColumnIndexOrThrow(_cursor, "coverImage");
-          final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
-          final int _cursorIndexOfSubCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "subCategory");
-          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
-          final int _cursorIndexOfContentPath = CursorUtil.getColumnIndexOrThrow(_cursor, "contentPath");
-          final int _cursorIndexOfAudioPath = CursorUtil.getColumnIndexOrThrow(_cursor, "audioPath");
-          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
-          final int _cursorIndexOfWordCount = CursorUtil.getColumnIndexOrThrow(_cursor, "wordCount");
-          final int _cursorIndexOfMinAge = CursorUtil.getColumnIndexOrThrow(_cursor, "minAge");
-          final int _cursorIndexOfMaxAge = CursorUtil.getColumnIndexOrThrow(_cursor, "maxAge");
-          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
-          final int _cursorIndexOfSource = CursorUtil.getColumnIndexOrThrow(_cursor, "source");
-          final int _cursorIndexOfFormat = CursorUtil.getColumnIndexOrThrow(_cursor, "format");
-          final int _cursorIndexOfPlayCount = CursorUtil.getColumnIndexOrThrow(_cursor, "playCount");
-          final int _cursorIndexOfFavoriteCount = CursorUtil.getColumnIndexOrThrow(_cursor, "favoriteCount");
-          final int _cursorIndexOfRating = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
-          final int _cursorIndexOfLastPlayedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPlayedAt");
-          final int _cursorIndexOfIsFavorite = CursorUtil.getColumnIndexOrThrow(_cursor, "isFavorite");
-          final int _cursorIndexOfIsDownloaded = CursorUtil.getColumnIndexOrThrow(_cursor, "isDownloaded");
-          final int _cursorIndexOfIsCompleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isCompleted");
-          final int _cursorIndexOfIsHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "isHidden");
-          final int _cursorIndexOfLastPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPosition");
-          final int _cursorIndexOfProgress = CursorUtil.getColumnIndexOrThrow(_cursor, "progress");
-          final int _cursorIndexOfMetadata = CursorUtil.getColumnIndexOrThrow(_cursor, "metadata");
+          final int _cursorIndexOfId = 0;
+          final int _cursorIndexOfTitle = 1;
+          final int _cursorIndexOfAuthor = 2;
+          final int _cursorIndexOfDescription = 3;
+          final int _cursorIndexOfCoverImage = 4;
+          final int _cursorIndexOfCategory = 5;
+          final int _cursorIndexOfSubCategory = 6;
+          final int _cursorIndexOfTags = 7;
+          final int _cursorIndexOfContentPath = 8;
+          final int _cursorIndexOfAudioPath = 9;
+          final int _cursorIndexOfDuration = 10;
+          final int _cursorIndexOfWordCount = 11;
+          final int _cursorIndexOfMinAge = 12;
+          final int _cursorIndexOfMaxAge = 13;
+          final int _cursorIndexOfLanguage = 14;
+          final int _cursorIndexOfSource = 15;
+          final int _cursorIndexOfFormat = 16;
+          final int _cursorIndexOfPlayCount = 17;
+          final int _cursorIndexOfFavoriteCount = 18;
+          final int _cursorIndexOfRating = 19;
+          final int _cursorIndexOfCreatedAt = 20;
+          final int _cursorIndexOfUpdatedAt = 21;
+          final int _cursorIndexOfLastPlayedAt = 22;
+          final int _cursorIndexOfIsFavorite = 23;
+          final int _cursorIndexOfIsDownloaded = 24;
+          final int _cursorIndexOfIsCompleted = 25;
+          final int _cursorIndexOfIsHidden = 26;
+          final int _cursorIndexOfLastPosition = 27;
+          final int _cursorIndexOfProgress = 28;
+          final int _cursorIndexOfMetadata = 29;
           final List<Story> _result = new ArrayList<Story>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Story _item;
@@ -1252,7 +1252,7 @@ public final class StoryDao_Impl implements StoryDao {
 
   @Override
   public Flow<List<Story>> getAllFlow() {
-    final String _sql = "SELECT * FROM stories ORDER BY createdAt DESC";
+    final String _sql = "SELECT `stories`.`id` AS `id`, `stories`.`title` AS `title`, `stories`.`author` AS `author`, `stories`.`description` AS `description`, `stories`.`coverImage` AS `coverImage`, `stories`.`category` AS `category`, `stories`.`subCategory` AS `subCategory`, `stories`.`tags` AS `tags`, `stories`.`contentPath` AS `contentPath`, `stories`.`audioPath` AS `audioPath`, `stories`.`duration` AS `duration`, `stories`.`wordCount` AS `wordCount`, `stories`.`minAge` AS `minAge`, `stories`.`maxAge` AS `maxAge`, `stories`.`language` AS `language`, `stories`.`source` AS `source`, `stories`.`format` AS `format`, `stories`.`playCount` AS `playCount`, `stories`.`favoriteCount` AS `favoriteCount`, `stories`.`rating` AS `rating`, `stories`.`createdAt` AS `createdAt`, `stories`.`updatedAt` AS `updatedAt`, `stories`.`lastPlayedAt` AS `lastPlayedAt`, `stories`.`isFavorite` AS `isFavorite`, `stories`.`isDownloaded` AS `isDownloaded`, `stories`.`isCompleted` AS `isCompleted`, `stories`.`isHidden` AS `isHidden`, `stories`.`lastPosition` AS `lastPosition`, `stories`.`progress` AS `progress`, `stories`.`metadata` AS `metadata` FROM stories ORDER BY createdAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.createFlow(__db, false, new String[] {"stories"}, new Callable<List<Story>>() {
       @Override
@@ -1260,36 +1260,36 @@ public final class StoryDao_Impl implements StoryDao {
       public List<Story> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-          final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfCoverImage = CursorUtil.getColumnIndexOrThrow(_cursor, "coverImage");
-          final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
-          final int _cursorIndexOfSubCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "subCategory");
-          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
-          final int _cursorIndexOfContentPath = CursorUtil.getColumnIndexOrThrow(_cursor, "contentPath");
-          final int _cursorIndexOfAudioPath = CursorUtil.getColumnIndexOrThrow(_cursor, "audioPath");
-          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
-          final int _cursorIndexOfWordCount = CursorUtil.getColumnIndexOrThrow(_cursor, "wordCount");
-          final int _cursorIndexOfMinAge = CursorUtil.getColumnIndexOrThrow(_cursor, "minAge");
-          final int _cursorIndexOfMaxAge = CursorUtil.getColumnIndexOrThrow(_cursor, "maxAge");
-          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
-          final int _cursorIndexOfSource = CursorUtil.getColumnIndexOrThrow(_cursor, "source");
-          final int _cursorIndexOfFormat = CursorUtil.getColumnIndexOrThrow(_cursor, "format");
-          final int _cursorIndexOfPlayCount = CursorUtil.getColumnIndexOrThrow(_cursor, "playCount");
-          final int _cursorIndexOfFavoriteCount = CursorUtil.getColumnIndexOrThrow(_cursor, "favoriteCount");
-          final int _cursorIndexOfRating = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
-          final int _cursorIndexOfLastPlayedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPlayedAt");
-          final int _cursorIndexOfIsFavorite = CursorUtil.getColumnIndexOrThrow(_cursor, "isFavorite");
-          final int _cursorIndexOfIsDownloaded = CursorUtil.getColumnIndexOrThrow(_cursor, "isDownloaded");
-          final int _cursorIndexOfIsCompleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isCompleted");
-          final int _cursorIndexOfIsHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "isHidden");
-          final int _cursorIndexOfLastPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPosition");
-          final int _cursorIndexOfProgress = CursorUtil.getColumnIndexOrThrow(_cursor, "progress");
-          final int _cursorIndexOfMetadata = CursorUtil.getColumnIndexOrThrow(_cursor, "metadata");
+          final int _cursorIndexOfId = 0;
+          final int _cursorIndexOfTitle = 1;
+          final int _cursorIndexOfAuthor = 2;
+          final int _cursorIndexOfDescription = 3;
+          final int _cursorIndexOfCoverImage = 4;
+          final int _cursorIndexOfCategory = 5;
+          final int _cursorIndexOfSubCategory = 6;
+          final int _cursorIndexOfTags = 7;
+          final int _cursorIndexOfContentPath = 8;
+          final int _cursorIndexOfAudioPath = 9;
+          final int _cursorIndexOfDuration = 10;
+          final int _cursorIndexOfWordCount = 11;
+          final int _cursorIndexOfMinAge = 12;
+          final int _cursorIndexOfMaxAge = 13;
+          final int _cursorIndexOfLanguage = 14;
+          final int _cursorIndexOfSource = 15;
+          final int _cursorIndexOfFormat = 16;
+          final int _cursorIndexOfPlayCount = 17;
+          final int _cursorIndexOfFavoriteCount = 18;
+          final int _cursorIndexOfRating = 19;
+          final int _cursorIndexOfCreatedAt = 20;
+          final int _cursorIndexOfUpdatedAt = 21;
+          final int _cursorIndexOfLastPlayedAt = 22;
+          final int _cursorIndexOfIsFavorite = 23;
+          final int _cursorIndexOfIsDownloaded = 24;
+          final int _cursorIndexOfIsCompleted = 25;
+          final int _cursorIndexOfIsHidden = 26;
+          final int _cursorIndexOfLastPosition = 27;
+          final int _cursorIndexOfProgress = 28;
+          final int _cursorIndexOfMetadata = 29;
           final List<Story> _result = new ArrayList<Story>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Story _item;
@@ -2272,7 +2272,7 @@ public final class StoryDao_Impl implements StoryDao {
 
   @Override
   public Object getFavorites(final Continuation<? super List<Story>> $completion) {
-    final String _sql = "SELECT * FROM stories WHERE isFavorite = 1 ORDER BY updatedAt DESC";
+    final String _sql = "SELECT `stories`.`id` AS `id`, `stories`.`title` AS `title`, `stories`.`author` AS `author`, `stories`.`description` AS `description`, `stories`.`coverImage` AS `coverImage`, `stories`.`category` AS `category`, `stories`.`subCategory` AS `subCategory`, `stories`.`tags` AS `tags`, `stories`.`contentPath` AS `contentPath`, `stories`.`audioPath` AS `audioPath`, `stories`.`duration` AS `duration`, `stories`.`wordCount` AS `wordCount`, `stories`.`minAge` AS `minAge`, `stories`.`maxAge` AS `maxAge`, `stories`.`language` AS `language`, `stories`.`source` AS `source`, `stories`.`format` AS `format`, `stories`.`playCount` AS `playCount`, `stories`.`favoriteCount` AS `favoriteCount`, `stories`.`rating` AS `rating`, `stories`.`createdAt` AS `createdAt`, `stories`.`updatedAt` AS `updatedAt`, `stories`.`lastPlayedAt` AS `lastPlayedAt`, `stories`.`isFavorite` AS `isFavorite`, `stories`.`isDownloaded` AS `isDownloaded`, `stories`.`isCompleted` AS `isCompleted`, `stories`.`isHidden` AS `isHidden`, `stories`.`lastPosition` AS `lastPosition`, `stories`.`progress` AS `progress`, `stories`.`metadata` AS `metadata` FROM stories WHERE isFavorite = 1 ORDER BY updatedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
     return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<Story>>() {
@@ -2281,36 +2281,36 @@ public final class StoryDao_Impl implements StoryDao {
       public List<Story> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-          final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfCoverImage = CursorUtil.getColumnIndexOrThrow(_cursor, "coverImage");
-          final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
-          final int _cursorIndexOfSubCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "subCategory");
-          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
-          final int _cursorIndexOfContentPath = CursorUtil.getColumnIndexOrThrow(_cursor, "contentPath");
-          final int _cursorIndexOfAudioPath = CursorUtil.getColumnIndexOrThrow(_cursor, "audioPath");
-          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
-          final int _cursorIndexOfWordCount = CursorUtil.getColumnIndexOrThrow(_cursor, "wordCount");
-          final int _cursorIndexOfMinAge = CursorUtil.getColumnIndexOrThrow(_cursor, "minAge");
-          final int _cursorIndexOfMaxAge = CursorUtil.getColumnIndexOrThrow(_cursor, "maxAge");
-          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
-          final int _cursorIndexOfSource = CursorUtil.getColumnIndexOrThrow(_cursor, "source");
-          final int _cursorIndexOfFormat = CursorUtil.getColumnIndexOrThrow(_cursor, "format");
-          final int _cursorIndexOfPlayCount = CursorUtil.getColumnIndexOrThrow(_cursor, "playCount");
-          final int _cursorIndexOfFavoriteCount = CursorUtil.getColumnIndexOrThrow(_cursor, "favoriteCount");
-          final int _cursorIndexOfRating = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
-          final int _cursorIndexOfLastPlayedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPlayedAt");
-          final int _cursorIndexOfIsFavorite = CursorUtil.getColumnIndexOrThrow(_cursor, "isFavorite");
-          final int _cursorIndexOfIsDownloaded = CursorUtil.getColumnIndexOrThrow(_cursor, "isDownloaded");
-          final int _cursorIndexOfIsCompleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isCompleted");
-          final int _cursorIndexOfIsHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "isHidden");
-          final int _cursorIndexOfLastPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPosition");
-          final int _cursorIndexOfProgress = CursorUtil.getColumnIndexOrThrow(_cursor, "progress");
-          final int _cursorIndexOfMetadata = CursorUtil.getColumnIndexOrThrow(_cursor, "metadata");
+          final int _cursorIndexOfId = 0;
+          final int _cursorIndexOfTitle = 1;
+          final int _cursorIndexOfAuthor = 2;
+          final int _cursorIndexOfDescription = 3;
+          final int _cursorIndexOfCoverImage = 4;
+          final int _cursorIndexOfCategory = 5;
+          final int _cursorIndexOfSubCategory = 6;
+          final int _cursorIndexOfTags = 7;
+          final int _cursorIndexOfContentPath = 8;
+          final int _cursorIndexOfAudioPath = 9;
+          final int _cursorIndexOfDuration = 10;
+          final int _cursorIndexOfWordCount = 11;
+          final int _cursorIndexOfMinAge = 12;
+          final int _cursorIndexOfMaxAge = 13;
+          final int _cursorIndexOfLanguage = 14;
+          final int _cursorIndexOfSource = 15;
+          final int _cursorIndexOfFormat = 16;
+          final int _cursorIndexOfPlayCount = 17;
+          final int _cursorIndexOfFavoriteCount = 18;
+          final int _cursorIndexOfRating = 19;
+          final int _cursorIndexOfCreatedAt = 20;
+          final int _cursorIndexOfUpdatedAt = 21;
+          final int _cursorIndexOfLastPlayedAt = 22;
+          final int _cursorIndexOfIsFavorite = 23;
+          final int _cursorIndexOfIsDownloaded = 24;
+          final int _cursorIndexOfIsCompleted = 25;
+          final int _cursorIndexOfIsHidden = 26;
+          final int _cursorIndexOfLastPosition = 27;
+          final int _cursorIndexOfProgress = 28;
+          final int _cursorIndexOfMetadata = 29;
           final List<Story> _result = new ArrayList<Story>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Story _item;
@@ -2470,7 +2470,7 @@ public final class StoryDao_Impl implements StoryDao {
 
   @Override
   public Flow<List<Story>> getFavoritesFlow() {
-    final String _sql = "SELECT * FROM stories WHERE isFavorite = 1 ORDER BY updatedAt DESC";
+    final String _sql = "SELECT `stories`.`id` AS `id`, `stories`.`title` AS `title`, `stories`.`author` AS `author`, `stories`.`description` AS `description`, `stories`.`coverImage` AS `coverImage`, `stories`.`category` AS `category`, `stories`.`subCategory` AS `subCategory`, `stories`.`tags` AS `tags`, `stories`.`contentPath` AS `contentPath`, `stories`.`audioPath` AS `audioPath`, `stories`.`duration` AS `duration`, `stories`.`wordCount` AS `wordCount`, `stories`.`minAge` AS `minAge`, `stories`.`maxAge` AS `maxAge`, `stories`.`language` AS `language`, `stories`.`source` AS `source`, `stories`.`format` AS `format`, `stories`.`playCount` AS `playCount`, `stories`.`favoriteCount` AS `favoriteCount`, `stories`.`rating` AS `rating`, `stories`.`createdAt` AS `createdAt`, `stories`.`updatedAt` AS `updatedAt`, `stories`.`lastPlayedAt` AS `lastPlayedAt`, `stories`.`isFavorite` AS `isFavorite`, `stories`.`isDownloaded` AS `isDownloaded`, `stories`.`isCompleted` AS `isCompleted`, `stories`.`isHidden` AS `isHidden`, `stories`.`lastPosition` AS `lastPosition`, `stories`.`progress` AS `progress`, `stories`.`metadata` AS `metadata` FROM stories WHERE isFavorite = 1 ORDER BY updatedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.createFlow(__db, false, new String[] {"stories"}, new Callable<List<Story>>() {
       @Override
@@ -2478,36 +2478,36 @@ public final class StoryDao_Impl implements StoryDao {
       public List<Story> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-          final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final int _cursorIndexOfCoverImage = CursorUtil.getColumnIndexOrThrow(_cursor, "coverImage");
-          final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
-          final int _cursorIndexOfSubCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "subCategory");
-          final int _cursorIndexOfTags = CursorUtil.getColumnIndexOrThrow(_cursor, "tags");
-          final int _cursorIndexOfContentPath = CursorUtil.getColumnIndexOrThrow(_cursor, "contentPath");
-          final int _cursorIndexOfAudioPath = CursorUtil.getColumnIndexOrThrow(_cursor, "audioPath");
-          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
-          final int _cursorIndexOfWordCount = CursorUtil.getColumnIndexOrThrow(_cursor, "wordCount");
-          final int _cursorIndexOfMinAge = CursorUtil.getColumnIndexOrThrow(_cursor, "minAge");
-          final int _cursorIndexOfMaxAge = CursorUtil.getColumnIndexOrThrow(_cursor, "maxAge");
-          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
-          final int _cursorIndexOfSource = CursorUtil.getColumnIndexOrThrow(_cursor, "source");
-          final int _cursorIndexOfFormat = CursorUtil.getColumnIndexOrThrow(_cursor, "format");
-          final int _cursorIndexOfPlayCount = CursorUtil.getColumnIndexOrThrow(_cursor, "playCount");
-          final int _cursorIndexOfFavoriteCount = CursorUtil.getColumnIndexOrThrow(_cursor, "favoriteCount");
-          final int _cursorIndexOfRating = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
-          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
-          final int _cursorIndexOfLastPlayedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPlayedAt");
-          final int _cursorIndexOfIsFavorite = CursorUtil.getColumnIndexOrThrow(_cursor, "isFavorite");
-          final int _cursorIndexOfIsDownloaded = CursorUtil.getColumnIndexOrThrow(_cursor, "isDownloaded");
-          final int _cursorIndexOfIsCompleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isCompleted");
-          final int _cursorIndexOfIsHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "isHidden");
-          final int _cursorIndexOfLastPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPosition");
-          final int _cursorIndexOfProgress = CursorUtil.getColumnIndexOrThrow(_cursor, "progress");
-          final int _cursorIndexOfMetadata = CursorUtil.getColumnIndexOrThrow(_cursor, "metadata");
+          final int _cursorIndexOfId = 0;
+          final int _cursorIndexOfTitle = 1;
+          final int _cursorIndexOfAuthor = 2;
+          final int _cursorIndexOfDescription = 3;
+          final int _cursorIndexOfCoverImage = 4;
+          final int _cursorIndexOfCategory = 5;
+          final int _cursorIndexOfSubCategory = 6;
+          final int _cursorIndexOfTags = 7;
+          final int _cursorIndexOfContentPath = 8;
+          final int _cursorIndexOfAudioPath = 9;
+          final int _cursorIndexOfDuration = 10;
+          final int _cursorIndexOfWordCount = 11;
+          final int _cursorIndexOfMinAge = 12;
+          final int _cursorIndexOfMaxAge = 13;
+          final int _cursorIndexOfLanguage = 14;
+          final int _cursorIndexOfSource = 15;
+          final int _cursorIndexOfFormat = 16;
+          final int _cursorIndexOfPlayCount = 17;
+          final int _cursorIndexOfFavoriteCount = 18;
+          final int _cursorIndexOfRating = 19;
+          final int _cursorIndexOfCreatedAt = 20;
+          final int _cursorIndexOfUpdatedAt = 21;
+          final int _cursorIndexOfLastPlayedAt = 22;
+          final int _cursorIndexOfIsFavorite = 23;
+          final int _cursorIndexOfIsDownloaded = 24;
+          final int _cursorIndexOfIsCompleted = 25;
+          final int _cursorIndexOfIsHidden = 26;
+          final int _cursorIndexOfLastPosition = 27;
+          final int _cursorIndexOfProgress = 28;
+          final int _cursorIndexOfMetadata = 29;
           final List<Story> _result = new ArrayList<Story>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Story _item;

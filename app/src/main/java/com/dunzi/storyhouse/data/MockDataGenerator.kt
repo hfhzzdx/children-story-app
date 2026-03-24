@@ -224,78 +224,59 @@ object MockDataGenerator {
     fun generateDefaultUserSettings(): UserSettings {
         return UserSettings(
             userId = "default",
-            childInfo = UserSettings.ChildInfo(
-                name = "小明",
-                age = 4,
-                gender = "男",
-                avatar = null
-            ),
-            playbackSettings = UserSettings.PlaybackSettings(
-                defaultVolume = 80,
-                defaultPlaybackSpeed = 1.0f,
-                voiceType = "default",
-                backgroundPlay = true,
-                autoPlayNext = true
-            ),
-            timerSettings = UserSettings.TimerSettings(
-                sleepTimerEnabled = false,
-                sleepTimerDuration = 30,
-                dailyLimitEnabled = true,
-                dailyLimitDuration = 60
-            ),
-            displaySettings = UserSettings.DisplaySettings(
-                theme = "light",
-                fontSize = "medium",
-                eyeProtectionMode = false,
-                animationEnabled = true
-            ),
-            contentFilter = UserSettings.ContentFilter(
-                contentFilterLevel = "moderate",
-                blockedCategories = emptyList(),
-                blockedTags = emptyList(),
-                ageRestriction = true
-            ),
-            parentalControl = UserSettings.ParentalControl(
-                parentalControlEnabled = true,
-                purchaseLock = true,
-                dataCollectionAllowed = false,
-                analyticsEnabled = false
-            ),
-            notificationSettings = UserSettings.NotificationSettings(
-                notificationsEnabled = true,
-                reminderNotifications = true,
-                updateNotifications = true,
-                promotionalNotifications = false
-            ),
-            storageSettings = UserSettings.StorageSettings(
-                autoDownloadFavorites = false,
-                storageLocation = "internal",
-                cacheSizeLimit = 1024,
-                autoClearCache = true,
-                wifiOnlyDownload = true,
-                dataSaverMode = false
-            ),
-            audioSettings = UserSettings.AudioSettings(
-                equalizerPreset = "default",
-                spatialAudio = false,
-                volumeBoost = false
-            ),
-            playbackMode = UserSettings.PlaybackMode(
-                shuffle = false,
-                repeatMode = "none"
-            ),
-            learningSettings = UserSettings.LearningSettings(
-                learningModeEnabled = false,
-                questionAfterStory = false,
-                vocabularyHighlight = false,
-                pronunciationGuide = false
-            ),
+            childName = "小明",
+            childAge = 4,
+            childGender = "男",
+            childAvatar = "",
+            defaultVolume = 0.8f,
+            defaultPlaybackSpeed = 1.0f,
+            defaultVoiceType = "default",
+            backgroundPlay = true,
+            autoPlayNext = true,
+            sleepTimerEnabled = false,
+            sleepTimerDuration = 1800000, // 30分钟
+            dailyLimitEnabled = true,
+            dailyLimitDuration = 3600000, // 1小时
+            theme = "light",
+            fontSize = "medium",
+            eyeProtectionMode = false,
+            animationEnabled = true,
+            contentFilterLevel = "moderate",
+            blockedCategories = emptyList(),
+            blockedTags = emptyList(),
+            ageRestriction = true,
+            parentalControlEnabled = true,
+            purchaseLock = true,
+            dataCollectionAllowed = false,
+            analyticsEnabled = false,
+            notificationsEnabled = true,
+            reminderNotifications = true,
+            updateNotifications = true,
+            promotionalNotifications = false,
+            autoDownloadFavorites = false,
+            storageLocation = "internal",
+            cacheSizeLimit = 1073741824, // 1GB
+            autoClearCache = true,
+            wifiOnlyDownload = true,
+            dataSaverMode = false,
+            syncEnabled = false,
+            backgroundMusic = false,
+            backgroundMusicType = "piano",
+            backgroundMusicVolume = 0.3f,
+            soundEffects = true,
+            playMode = "sequential",
+            shuffleEnabled = false,
+            crossfadeDuration = 3000,
+            learningMode = false,
+            repeatDifficultParts = true,
+            showSubtitles = false,
+            vocabularyHighlight = true,
             createdAt = Date(),
             updatedAt = Date(),
             lastLoginAt = Date(),
-            totalPlayTime = 3600, // 1小时
-            totalStoriesPlayed = 15,
-            favoriteCategories = listOf("通话故事", "睡前故事"),
+            totalPlayTime = 3600000, // 1小时
+            storiesCompleted = 15,
+            favoritesCount = 5,
             customSettings = emptyMap()
         )
     }

@@ -73,6 +73,10 @@ class PlayHistoryRepository @Inject constructor(
     suspend fun getUserPlayHistoryCount(userId: String): Int = 
         playHistoryDao.getCountByUserId(userId)
     
+    // 获取用户播放历史
+    suspend fun getPlayHistory(userId: String, limit: Int = 50): List<PlayHistory> = 
+        playHistoryDao.getByUserId(userId, limit)
+    
     // 获取故事播放记录数量
     suspend fun getStoryPlayHistoryCount(storyId: Long): Int = 
         playHistoryDao.getCountByStoryId(storyId)

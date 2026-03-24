@@ -104,10 +104,11 @@ data class UserSettings(
      * 获取主题资源ID
      */
     fun getThemeResource(): Int {
+        // 返回主题标识，实际资源引用应该在UI层处理
         return when (theme) {
-            "dark" -> R.style.Theme_ChildrenStoryApp_Night
-            "eye_protection" -> R.style.Theme_ChildrenStoryApp_EyeProtection
-            else -> R.style.Theme_ChildrenStoryApp
+            "dark" -> 1
+            "eye_protection" -> 2
+            else -> 0
         }
     }
     
@@ -115,11 +116,12 @@ data class UserSettings(
      * 获取字体大小资源
      */
     fun getFontSizeResource(): Int {
+        // 返回字体大小标识，实际资源引用应该在UI层处理
         return when (fontSize) {
-            "small" -> R.style.TextAppearance_ChildrenStoryApp_Small
-            "large" -> R.style.TextAppearance_ChildrenStoryApp_Large
-            "xlarge" -> R.style.TextAppearance_ChildrenStoryApp_XLarge
-            else -> R.style.TextAppearance_ChildrenStoryApp_Medium
+            "small" -> 0
+            "large" -> 2
+            "xlarge" -> 3
+            else -> 1 // medium
         }
     }
     

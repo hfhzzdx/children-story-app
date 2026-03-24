@@ -175,7 +175,15 @@ class PlayerViewModel @Inject constructor(
                 RepeatMode.REPEAT_ALL -> "repeat_all"
                 RepeatMode.REPEAT_ONE -> "repeat_one"
             }
-            userSettingsRepository.updatePlayMode(playMode)
+            val currentSettings = _userSettings.value
+            if (currentSettings != null) {
+                userSettingsRepository.updatePlayMode(
+                    userId = "default",
+                    mode = playMode,
+                    shuffle = currentSettings.shuffleEnabled,
+                    crossfade = currentSettings.crossfadeDuration
+                )
+            }
         } // 修复：补全了此前缺失的协程代码块结束括号
     }
     
@@ -223,7 +231,16 @@ class PlayerViewModel @Inject constructor(
         
         // 保存到用户设置
         viewModelScope.launch {
-            userSettingsRepository.updateSleepTimerDuration(0)
+            val currentSettings = _userSettings.value
+            if (currentSettings != null) {
+                userSettingsRepository.updateTimerSettings(
+                    userId = "default",
+                    sleepTimerEnabled = false,
+                    sleepTimerDuration = 0L,
+                    dailyLimitEnabled = currentSettings.dailyLimitEnabled,
+                    dailyLimitDuration = currentSettings.dailyLimitDuration
+                )
+            }
         }
     }
     
@@ -326,9 +343,21 @@ class PlayerViewModel @Inject constructor(
      */
     fun updatePlayMode() {
         viewModelScope.launch {
-            userSettingsRepository.updatePlayMode(
-                shuffle = _playerState.value.shuffleEnabled
-            )
+            val currentSettings = _userSettings.value
+            val playerState = _playerState.value
+            if (currentSettings != null) {
+                val mode = when (playerState.repeatMode) {
+                    RepeatMode.NONE -> "sequential"
+                    RepeatMode.REPEAT_ALL -> "repeat_all"
+                    RepeatMode.REPEAT_ONE -> "repeat_one"
+                }
+                userSettingsRepository.updatePlayMode(
+                    userId = "default",
+                    mode = mode,
+                    shuffle = playerState.shuffleEnabled,
+                    crossfade = currentSettings.crossfadeDuration
+                )
+            }
         }
     }
     
@@ -344,7 +373,17 @@ class PlayerViewModel @Inject constructor(
         
         // 更新用户设置
         viewModelScope.launch {
-            userSettingsRepository.updatePlaybackSettings(speed = speed)
+            val currentSettings = _userSettings.value
+            if (currentSettings != null) {
+                userSettingsRepository.updatePlaybackSettings(
+                    userId = "default",
+                    volume = currentSettings.defaultVolume,
+                    speed = speed,
+                    voiceType = currentSettings.defaultVoiceType,
+                    backgroundPlay = currentSettings.backgroundPlay,
+                    autoPlayNext = currentSettings.autoPlayNext
+                )
+            }
         }
     }
     

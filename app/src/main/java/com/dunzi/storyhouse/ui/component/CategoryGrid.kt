@@ -25,6 +25,12 @@ import androidx.compose.material.icons.filled.Nature
 import androidx.compose.material.icons.filled.Pets
 import androidx.compose.material.icons.filled.Science
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.History as HistoryOutlined
+import androidx.compose.material.icons.outlined.LibraryBooks as LibraryBooksOutlined
+import androidx.compose.material.icons.outlined.MusicNote as MusicNoteOutlined
+import androidx.compose.material.icons.outlined.Nature as NatureOutlined
+import androidx.compose.material.icons.outlined.Pets as PetsOutlined
+import androidx.compose.material.icons.outlined.Science as ScienceOutlined
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

@@ -18,7 +18,7 @@ class MapConverter {
             emptyMap()
         } else {
             try {
-                gson.fromJson(value, type)
+                gson.fromJson<Map<String, String>>(value, type)
             } catch (e: Exception) {
                 emptyMap()
             }

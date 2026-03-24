@@ -18,7 +18,7 @@ class ListConverter {
             emptyList()
         } else {
             try {
-                gson.fromJson(value, type)
+                gson.fromJson<List<String>>(value, type)
             } catch (e: Exception) {
                 emptyList()
             }

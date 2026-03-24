@@ -37,6 +37,10 @@ class AudioPlaybackService : Service() {
     private var currentStoryId: Long = -1
     private var isPlaying = false
     
+    // 播放列表相关
+    private var playlist: List<com.dunzi.storyhouse.data.model.Story> = emptyList()
+    private var currentPlaylistIndex: Int = -1
+    
     // 播放进度相关
     private var playbackProgressHandler: Handler? = null
     private var playbackProgressRunnable: Runnable? = null
